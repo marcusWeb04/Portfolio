@@ -1,0 +1,349 @@
+@import './_variables';
+@import './_placeholders';
+
+*,::before,::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color:  $fond-noir;
+}
+
+section{
+    height: 100vh;
+    @extend %flex-center;
+    position: relative;
+    .title-section{
+        color: $blanc;
+        font-size: 1.8vw;
+        position: absolute;
+        top: 2%;
+        left: 3%;
+    }
+    .content-section{
+        width: 90vw;
+        height: 80vh;
+    }
+}
+
+a{
+    text-decoration: none;
+}
+
+h1,h3,p{
+    color: $blanc;
+}
+
+// apparition
+.appear{
+    display: block!important;
+}
+
+// bar de navigation
+nav{
+    height: 10vh;
+    padding: 1%;
+    @extend %flex-beetween;
+    color:  $blanc-casse;
+    ul{
+        width: 40%;
+        @extend %list;
+    }
+    a{
+        color:  $blanc-casse;
+    }
+}
+
+// home
+#home{
+    padding-top: 5%;
+    height: 90vh !important;
+    display: block;
+    h1{
+        font-size: 3vw;
+        margin-left: 2%;
+    }
+    h2{
+        margin-top: 10%;
+        font-size: 2.5vw;
+        color: $bleu-gris;
+        text-align: center;
+    }
+}
+
+// en apprendre plus sur moi
+#learn-more{
+    color: $blanc;
+    @extend %flex-center;
+    .content-section{
+        @extend %flex-wrap-around;
+        .part-content{
+            width: 45%;
+            height: 95%;
+            @extend %flex-center;
+        }
+        .part-content:nth-child(1) p{
+            text-align: justify;
+            word-wrap: break-word;
+            white-space: pre-line;
+        }
+        .part-content:nth-child(2){
+            width: 25%;
+            height: 50%;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    ul{
+        width: 50%;
+        @extend %list;
+        li{
+            width: 5%;
+            height: 5%;
+        }
+    }
+}
+
+// projet
+#project{
+    .content-section{
+        width: 100vw;
+        height: 86vh;
+        .container-parameter{
+            // @extend %list;
+            height: 20%;
+            li{
+                color: $blanc-casse;
+                border: 3px solid $bleu-gris;
+                border-radius: 25px;
+                @extend %flex-around;
+                width: 17%;
+                p{
+                    font-size: 1.2vw;
+                }
+                svg{
+                    color: $noir;
+                    width: 15%;
+                }
+            }
+        }
+        .container-main-project{
+            height: 80%;
+            @extend %flex-around;
+            .main-project{
+                width: 22%;
+                height: 90%;
+                border-radius: 15px;
+                border: 1px solid $bleu-gris;
+                background-color: $bleu-gris;
+            }
+        }
+    }
+}
+
+// expérience
+#experience{
+    .content-section{
+        margin-top: 5%;
+        width: 100%;
+        height: 90vh;
+        ul{
+            height: 10%;
+            color: $bleu-gris;
+            @extend %list;
+            li{
+                font-size: 1.65vw;
+                cursor: pointer;
+            }
+        }
+        .container{
+            height: 90%;
+            .element-content{
+                width: 13%;
+                height: 18%;
+            }
+        }
+        .study,.internship,.technology,.certification{
+            display: none;
+            height: 100%;
+        }
+        .study.appear{
+            .content{
+                width: 63.5%;
+                height: 100%;
+                border-left: 2px solid $blanc-casse;
+                @extend %flex-column-around;
+                position: relative;
+                left: 12.5%;
+                .content-element{
+                    width: 100%;
+                    height: 31%;
+                    h3{
+                        font-size: 1.65vw;
+                        position: relative;
+                        margin-left: 10px;
+                    }
+                    p{
+                        width: 68%;
+                        height: 70%;
+                        margin: 2% 0 0 3% ;
+                        color: $bleu-gris;
+                    }
+                }
+                .content-element h3::after{
+                    content: "";
+                    height: 16px;
+                    width: 16px;
+                    background-color: $blanc;
+                    position: absolute;
+                    top: -1px;
+                    left: -19px;
+                    border-radius: 50%;
+                }
+            }
+        }
+        .internship.appear{
+            .content{
+                width: 63.5%;
+                height: 100%;
+                border-left: 2px solid $blanc-casse;
+                @extend %flex-column-around;
+                position: relative;
+                left: 36.5%;
+                .content-element{
+                    width: 100%;
+                    height: 31%;
+                    h3{
+                        font-size: 1.65vw;
+                        position: relative;
+                        margin-left: 10px;
+                    }
+                    p{
+                        width: 40%;
+                        height: 70%;
+                        margin: 2% 0 0 3% ;
+                        color: $bleu-gris;
+                    }
+                }
+                .content-element h3::after{
+                    content: "";
+                    height: 16px;
+                    width: 16px;
+                    background-color: $blanc;
+                    position: absolute;
+                    top: -1px;
+                    left: -19px;
+                    border-radius: 50%;
+                }
+            }
+        }
+        .technology.appear{
+            display: flex!important;
+            .content{
+                padding: 1% 0;
+                width: 61.5%;
+                height: 100%;
+                gap: 20%;
+                @extend %flex-wrap-around;
+                border: 1px solid blueviolet;
+                .element-content{
+                    width: 13%;
+                }
+            }
+            .parameter{
+                width: 39.5%;
+                border: 1px solid white;
+                @extend %flex-column-around;
+                img{
+                    width: 30%;
+                }
+                p{
+                    width: 70%;
+                    height: 40%;
+                    padding: 2px;
+                }
+            }
+        }
+        .certification.appear{
+            .content{
+                padding: 1% 0;
+                width: 87.5%;
+                height: 100%;
+                gap: 20%;
+                @extend %flex-wrap-around;
+                border-right: 1px solid white;
+                .element-content{
+                    width: 11%;
+                    height: 20.5%;
+                }
+            }
+        }
+    }
+}
+
+// contact
+#contact{
+    height: 90vh;
+    .content-section{
+        height: 90%;
+        width: 100%;
+        height: 89.5%;
+        display: flex;
+        .part-section{
+            width: 50%;
+        }
+        .part-section:nth-child(1){
+            @extend %flex-center;
+            img{
+                width: 65%;
+                border-radius: 10px;
+            }
+        }
+    }
+}
+
+// footer
+footer{
+    height: 10vh;
+    display: flex;
+    .part-footer:nth-child(1){
+        display: flex;
+        justify-content: space-between;
+        ul{
+            font-size: 1.4vw;
+        }
+    }
+    .part-footer:nth-child(2){
+        ul{
+            width: 60%;
+            display: flex;
+            margin-left: auto;
+            li{
+                width: 10%;
+                svg{
+                    width: 100%;
+                }   
+            }
+        }
+        a{
+            margin-left: 55%;
+            font-size: 1.3vw;
+            color: $blanc;
+        }
+    }
+}
+
+.part-footer{
+    width: 50%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    ul{
+        @extend %list;
+    }
+}
