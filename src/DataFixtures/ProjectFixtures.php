@@ -35,6 +35,7 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
             $project = new Project();
             $project->setTitle($data['title']);
             $project->setDescription($data['description']);
+            $project->setImage(ImageFixtures::IMAGE_LIST['ETERNAL_IMAGE']);
             $manager->persist($project);
 
             $this->addReference($reference, $project);

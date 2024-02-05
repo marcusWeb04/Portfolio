@@ -34,14 +34,14 @@ class CertificationFixtures extends Fixture
             $certification->setTitle($data['title']);
             $certification->setDescription($data['description']);
             $certification->setLink($data['link']);
+
             $manager->persist($certification);
+
+            $this->addReference($data, $certification);
         }
     
         $manager->flush();
-    
-        foreach(self::CERTIFICATION_LIST as $reference => $data){
-            $this->addReference($reference, $certification);
-        }
+
     }
 
     public function getDependencies(): array
