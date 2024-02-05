@@ -7,7 +7,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 
-#[ORM\Entity(repositoryClass: MessageRepository::class)]
+#[ORM\Entity(repositoryClass: MessageSubjectRepository::class)]
 class MessageSubject{
     // attribut
     #[ORM\Id]

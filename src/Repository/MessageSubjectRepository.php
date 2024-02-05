@@ -2,9 +2,9 @@
 
 namespace App\Repository;
 
-use App\Entity\Study;
-use Doctrine\Persistence\ManagerRegistry;
+use App\Entity\Project;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * @extends ServiceEntityRepository<Category>
@@ -16,7 +16,7 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
  */
 
 
-class StudyRepository extends ServiceEntityRepository
+class MessageSubjectRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
