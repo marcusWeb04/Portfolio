@@ -5,7 +5,6 @@ namespace App\DataFixtures;
 use App\Entity\Study;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
 class StudyFixtures extends Fixture
 {
@@ -14,23 +13,21 @@ class StudyFixtures extends Fixture
         $studyData = [
             [
                 'name' => 'Lycée Marie Cury',
-                'description' => 'J’ai obtenue mon bac avec les spécialitées
+                'description' => 'J’ai obtenu mon bac avec les spécialités
                 science de l’ingénieur et numérique science de l’informatique'
             ],
 
             [
                 'name' => 'Saint Vincent',
-                'description' => 'J’étudie actuellement au lycée Saint Vincent le dévellopement dans le cade d’un BTS SIO option slam'
+                'description' => 'J’étudie actuellement au lycée Saint Vincent le développement dans le cadre d’un BTS SIO option slam'
             ],
 
         ];
 
-        
-
-        foreach($studyData as $data){
+        foreach ($studyData as $data) {
             $study = new Study();
             $study->setTitle($data['name']);
-            $study->setDecription($data['description']);
+            $study->setDescription($data['description']); // Change to setDescription
             $manager->persist($study);
         }
 

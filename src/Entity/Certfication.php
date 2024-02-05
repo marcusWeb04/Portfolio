@@ -14,7 +14,7 @@ class Certification{
     private int $id;
 
     #[ORM\Column(type: 'string')]
-    private string $name;
+    private string $title;
 
     #[ORM\Column(type: 'date')]
     private DateTime $datetime;

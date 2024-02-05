@@ -14,7 +14,7 @@ class Intership{
     private int $id;
 
     #[ORM\Column(type: 'string')]
-    private string $Name;
+    private string $title;
 
     #[ORM\Column(type: 'date')]
     private DateTime $datetime;

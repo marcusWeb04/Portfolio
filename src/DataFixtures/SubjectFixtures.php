@@ -5,7 +5,6 @@ namespace App\DataFixtures;
 use App\Entity\Subject;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
 class SubjectFixtures extends Fixture
 {
@@ -42,5 +41,9 @@ class SubjectFixtures extends Fixture
         }
 
         $manager->flush();
+
+        foreach(self::SUBJECT_LIST as $data){
+            $this->addReference($data, $certification);
+        }
     }
 }

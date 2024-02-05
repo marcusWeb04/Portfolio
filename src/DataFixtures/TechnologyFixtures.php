@@ -2,13 +2,12 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Image;
 use App\Entity\Technology;
-use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
-class TechnologyFixtures extends Fixture
+class TechnologyFixtures extends Fixture implements DependentFixtureInterface
 {
     public function load(ObjectManager $manager): void
     {
@@ -34,10 +33,10 @@ class TechnologyFixtures extends Fixture
             ],
         ];
 
-        foreach($technologyData as $data){
+        foreach ($technologyData as $data) {
             $technology = new Technology();
-            $technology->setTitle($data['name']);
-            $technology->setDecription($data['description']);
+            $technology->setName($data['name']); // Change to setName
+            $technology->setDescription($data['description']); // Change to setDescription
             $manager->persist($technology);
         }
 

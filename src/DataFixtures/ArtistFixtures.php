@@ -3,41 +3,35 @@
 namespace App\DataFixtures;
 
 use App\Entity\Artist;
-use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-use Doctrine\Common\DataFixtures\DependentFixtureInterface;
+use Doctrine\Bundle\FixturesBundle\Fixture;
 
-class ArtistFixtures extends Fixture implements DependentFixtureInterface
+class ArtistFixtures extends Fixture
 {
+    public const Kavin = "KAVIN";
+    public const KEVIN_TRAN = "KEVIN_TRAN";
+    public const NEZCA = "NEZCA";
+
+    const ARTIST_LIST = [
+        self::Kavin => [
+            "name" => "Kavin"
+        ],
+        self::KEVIN_TRAN => [
+            "name" => "Kevin Tran"
+        ],
+        self::NEZCA => [
+            "name" => "Nezca"
+        ],
+    ];
+
     public function load(ObjectManager $manager): void
     {
-        $artistData = [
-            [
-                'name' => 'Kavin',
-            ],
-
-            [
-                'name' => 'Kevin Tran',
-            ],
-
-            [
-                'name' => 'Nezca',
-            ],
-        ];
-
-        foreach ($artistData as $data) {
+        foreach (self::ARTIST_LIST as $data) {
             $artist = new Artist();
             $artist->setName($data['name']);
             $manager->persist($artist);
         }
 
         $manager->flush();
-    }
-
-    public function getDependencies(): array
-    {
-        return [
-            ImageFixtures::class,
-        ];
     }
 }
