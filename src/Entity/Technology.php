@@ -7,7 +7,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 
-#[ORM\Entity(repositoryClass: ProjectRepository::class)]
+#[ORM\Entity(repositoryClass: TechnologyRepository::class)]
 class Technology{
     // attribut
     #[ORM\Id]
@@ -21,7 +21,7 @@ class Technology{
     #[ORM\Column(type: 'string')]
     private string $description;
 
-    #[ORM\ManytoMany(targetEntity: Project::class, mappedBy: 'technologies')]
+    #[ORM\ManyToMany(targetEntity: Project::class, mappedBy: 'technologies')]
     private Collection $projects;
 
     #[ORM\ManyToOne(targetEntity: Image::class, inversedBy: 'technologies')]
