@@ -21,7 +21,7 @@ class Technology{
     #[ORM\Column(type: 'string')]
     private string $description;
 
-    #[ORM\ManytoMany(targetEntity: Project::class, mappedBy: 'technologies')]
+    #[ORM\ManyToMany(targetEntity: Project::class, mappedBy: 'technologies')]
     private Collection $projects;
 
     #[ORM\ManyToOne(targetEntity: Image::class, inversedBy: 'technologies')]
