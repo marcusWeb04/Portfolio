@@ -14,10 +14,10 @@ class Certification{
     private int $id;
 
     #[ORM\Column(type: 'string')]
-    private string $title;
+    private ?string $title;
 
     #[ORM\Column(type: 'date')]
-    private DateTime $datetime;
+    private ?DateTime $datetime;
 
     #[ORM\Column(type: 'string')]
     private string $description;
@@ -59,14 +59,19 @@ class Certification{
         $this->title=$title;
     }
 
-    public function setAlt(DateTime $datetime): void
+    public function setAlt(string $alt): void
     {
-        $this->datetime=$datetime;
+        $this->alt=$alt;
     }
 
     public function setDescription(string $description): void
     {
         $this->description = $description;
+    }
+
+    public function setDatetime(DateTime $datetime):void
+    {
+        $this->datetime=$datetime;
     }
 
     public function setLink(string $link): void 

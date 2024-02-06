@@ -16,7 +16,7 @@ class Subject{
     private int $id;
 
     #[ORM\Column(type: 'string')]
-    private string $name;
+    private ?string $name;
 
     #[ORM\OneToMany(mappedBy: 'subject', targetEntity: MessageSubject::class)]
     private Collection $subjects;

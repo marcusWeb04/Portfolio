@@ -16,7 +16,7 @@ class TypeProject{
     private int $id;
 
     #[ORM\Column(type: 'string')]
-    private string $title;
+    private ?string $title;
 
     #[ORM\OneToMany(targetEntity: Project::class, mappedBy: 'type')]
     private Collection $projects;

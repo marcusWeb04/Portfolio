@@ -16,7 +16,7 @@ class Message{
     private int $id;
 
     #[ORM\Column(type: 'string')]
-    private string $name;
+    private ?string $name;
 
     #[ORM\Column(type: 'string')]
     private string $email;
