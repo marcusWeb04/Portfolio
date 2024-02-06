@@ -14,10 +14,10 @@ class Intership{
     private int $id;
 
     #[ORM\Column(type: 'string')]
-    private string $title;
+    private ?string $title;
 
     #[ORM\Column(type: 'date')]
-    private DateTime $datetime;
+    private ?DateTime $datetime;
 
     #[ORM\Column(type: 'string')]
     private string $description;
@@ -50,7 +50,7 @@ class Intership{
         $this->title=$title;
     }
 
-    public function setAlt(DateTime $datetime): void
+    public function setDatetime(DateTime $datetime): void
     {
         $this->datetime=$datetime;
     }

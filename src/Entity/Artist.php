@@ -10,21 +10,4 @@ class Artist extends Role{
 
     #[ORM\ManyToMany(targetEntity: Image::class, inversedBy: 'images')]
     private Collection $artists;
-
-    // getter
-    public function getId(): int
-    {
-        return $this->id;
-    }
-
-    public function getName(): string
-    {
-        return $this->name;
-    }
-
-    // setter
-    public function setName(string $name): void
-    {
-        $this->name=$name;
-    }
 }

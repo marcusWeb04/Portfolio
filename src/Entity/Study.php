@@ -15,10 +15,10 @@ class Study{
     private int $id;
 
     #[ORM\Column(type: 'string')]
-    private string $name;
+    private ?string $name;
 
     #[ORM\Column(type: 'date')]
-    private DateTime $datetime;
+    private ?DateTime $datetime;
 
     #[ORM\Column(type: 'string')]
     private string $description;
@@ -50,7 +50,7 @@ class Study{
         $this->title=$title;
     }
 
-    public function setAlt(DateTime $datetime): void
+    public function setDatetime(DateTime $datetime): void
     {
         $this->datetime=$datetime;
     }
