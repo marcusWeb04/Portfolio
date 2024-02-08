@@ -37,6 +37,7 @@ class TechnologyFixtures extends Fixture implements DependentFixtureInterface
             $technology = new Technology();
             $technology->setName($data['name']); // Change to setName
             $technology->setDescription($data['description']); // Change to setDescription
+            $technology->setImage(ImageFixtures::IMAGE_LIST['ETERNAL_IMAGE']);
             $manager->persist($technology);
         }
 

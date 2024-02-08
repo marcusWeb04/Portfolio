@@ -38,8 +38,8 @@ class ImageFixtures extends Fixture
             $image->setAlt($data['alt']);
             $image->setLink($data['link']);
             $manager->persist($image);
-
             $this->addReference($reference, $image);
+            dd($reference, $image);
         }
 
         $manager->flush();

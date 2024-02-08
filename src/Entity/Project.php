@@ -18,10 +18,10 @@ class Project{
     private int $id;
 
     #[ORM\Column(type: 'string')]
-    private ?string $title;
+    private ?string $name;
 
     #[ORM\Column(type: 'date')]
-    private ?DateTime $datetime;
+    private \DateTime $datetime;
 
     #[ORM\Column(type: 'string')]
     private string $description;
@@ -53,12 +53,12 @@ class Project{
         return $this->id;
     }
 
-    public function getTitle(): string
+    public function getName(): string
     {
-        return $this->title;
+        return $this->name;
     }
 
-    public function getDatetime(): DateTime
+    public function getDatetime(): \DateTime
     {
         return $this->datetime;
     }
@@ -84,14 +84,17 @@ class Project{
     }
 
     // setter
-    public function setTitle(string $title): void
+    public function setName(string $name): void
     {
-        $this->title=$title;
+        $this->name=$name;
     }
 
-    public function setDatetime(DateTime $datetime): void
+    public function setDatetime(string $value):void
     {
-        $this->datetime=$datetime;
+        $format = 'Y-m-d';
+        $dateTime = \DateTime::createFromFormat($format, $value);
+
+        $this->datetime=$dateTime;
     }
 
     public function setDescription(string $description): void

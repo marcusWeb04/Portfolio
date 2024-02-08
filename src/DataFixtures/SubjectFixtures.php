@@ -33,17 +33,12 @@ class SubjectFixtures extends Fixture
 
     public function load(ObjectManager $manager): void
     {   
-        foreach($SUBJECT_LIST as $data){
-            $study = new Study();
-            $study->setTitle($data['name']);
-            $study->setDecription($data['description']);
-            $manager->persist($study);
+        foreach(SELF::SUBJECT_LIST as $data){
+            $subject = new Subject();
+            $subject->setName($data['name']);
+            $manager->persist($subject);
         }
 
         $manager->flush();
-
-        foreach(self::SUBJECT_LIST as $data){
-            $this->addReference($data, $certification);
-        }
     }
 }

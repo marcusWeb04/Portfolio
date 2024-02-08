@@ -1,7 +1,7 @@
 <?php
 namespace App\Entity;
 
-use DateTimeInterface;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -14,10 +14,10 @@ class Certification{
     private int $id;
 
     #[ORM\Column(type: 'string')]
-    private ?string $title;
+    private ?string $name;
 
     #[ORM\Column(type: 'date')]
-    private ?DateTime $datetime;
+    private \DateTime $datetime;
 
     #[ORM\Column(type: 'string')]
     private string $description;
@@ -34,12 +34,12 @@ class Certification{
         return $this->id;
     }
 
-    public function getTitle(): string
+    public function getName(): string
     {
-        return $this->title;
+        return $this->name;
     }
 
-    public function getDatetime(): DateTime
+    public function getDatetime(): \DateTime
     {
         return $this->datetime;
     }
@@ -49,34 +49,52 @@ class Certification{
         return $this->description;
     }
 
-    public function getLink(): string{
+    public function getLink(): string
+    {
         return $this->link;
     }
 
-    // setter
-    public function setTitle(string $title): void
+    public function getImage(): Image
     {
-        $this->title=$title;
+        return $this->image;
     }
 
-    public function setAlt(string $alt): void
+    // setter
+    public function setName(string $name): void
     {
-        $this->alt=$alt;
+        $this->name=$name;
     }
+
 
     public function setDescription(string $description): void
     {
         $this->description = $description;
     }
 
-    public function setDatetime(DateTime $datetime):void
+    public function setDatetime(?string $value): void
     {
-        $this->datetime=$datetime;
+        if ($value === null) {
+            $this->datetime = null;
+        } else {
+            $format = 'Y-m-d';
+            $dateTime = \DateTime::createFromFormat($format, $value);
+    
+            if ($dateTime instanceof \DateTime) {
+                $this->datetime = $dateTime;
+            } else {
+                throw new \InvalidArgumentException("Invalid datetime format: $value. Expected format: $format");
+            }
+        }
     }
 
     public function setLink(string $link): void 
     {
         $this->link=$link;
+    }
+
+    public function setImage(Image $image): void 
+    {
+        $this->image = $image;
     }
 
 }

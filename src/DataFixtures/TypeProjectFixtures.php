@@ -14,13 +14,13 @@ class TypeProjectFixtures extends Fixture
 
     const TYPE_PROJET_LIST = [
         self::SUPERVISER_TYPE_PROJET => [
-            "title" => "Superviser",
+            "name" => "Superviser",
         ],
         self::POC_TYPE_PROJET => [
-            "title" => "POC",
+            "name" => "POC",
         ],
         self::PERSONAL_TYPE_PROJET => [
-            "title" => "Personnelle", // Corrected title for consistency
+            "name" => "Personnelle", // Corrected title for consistency
         ],
     ];
 
@@ -28,7 +28,7 @@ class TypeProjectFixtures extends Fixture
     {
         foreach (self::TYPE_PROJET_LIST as $reference => $data) {
             $type = new TypeProject();
-            $type->setTitle($data['title']);
+            $type->setName($data['name']);
             $manager->persist($type);
 
             $this->addReference($reference, $type); // Corrected reference to $type

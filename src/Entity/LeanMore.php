@@ -31,10 +31,20 @@ class LearnMore{
         return $this->description;
     }
 
+    public function getImage(): Image
+    {
+        return $this->image;
+    }
+
     // setter
     public function setDescription(string $description): void
     {
         $this->description = $description;
+    }
+
+    public function setImage(Image $image): void 
+    {
+        $this->image = $image;
     }
 
 }
