@@ -16,16 +16,22 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
 
     const PROJECT_LIST = [
         self::PORTFOLIO_PROJECT => [
-            "title" => "portfolio",
-            "description" => "Cette plateforme en ligne est un projet visant à présenter les projets que j'ai réalisés."
+            "name" => "portfolio",
+            "description" => "Cette plateforme en ligne est un projet visant à présenter les projets que j'ai réalisés.",
+            "date" => "2024/02/06",
+            "bestproject" => "true",
         ],
         self::CSE_SAINT_VINCENT_PROJECT => [
-            "title" => "CSE_SAINT_VINCENT_PROJECT",
-            "description" => "Ce projet est une application qui a dû être développée dans le cadre de la validation de ma première année d'étude supérieure."
+            "name" => "CSE_SAINT_VINCENT_PROJECT",
+            "description" => "Ce projet est une application qui a dû être développée dans le cadre de la validation de ma première année d'étude supérieure.",
+            "date" => "2023/06/06",
+            "bestproject" => "false",
         ],
         self::COFFERA_PROJECT => [
-            "title" => "COFFERA_PROJECT",
-            "description" => "Ce projet est un site vitrine d'un café fictif."
+            "name" => "COFFERA_PROJECT",
+            "description" => "Ce projet est un site vitrine d'un café fictif.",
+            "date" => "2023/09/15",
+            "bestproject" => "false",
         ]
     ];
 
@@ -33,7 +39,7 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
     {
         foreach (self::PROJECT_LIST as $reference => $data) {
             $project = new Project();
-            $project->setTitle($data['title']);
+            $project->setTitle($data['name']);
             $project->setDescription($data['description']);
             $project->setImage(ImageFixtures::IMAGE_LIST['ETERNAL_IMAGE']);
             $manager->persist($project);

@@ -16,7 +16,7 @@ class TypeProject{
     private int $id;
 
     #[ORM\Column(type: 'string')]
-    private ?string $title;
+    private ?string $name;
 
     #[ORM\OneToMany(targetEntity: Project::class, mappedBy: 'type')]
     private Collection $projects;
@@ -32,15 +32,15 @@ class TypeProject{
         return $this->id;
     }
 
-    public function getTitle(): string
+    public function getName(): string
     {
-        return $this->title;
+        return $this->name;
     }
 
     // setter
-    public function setTitle(string $title): void
+    public function setName(string $name): void
     {
-        $this->title=$title;
+        $this->name=$name;
     }
 
 }

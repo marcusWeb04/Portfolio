@@ -14,10 +14,10 @@ class Intership{
     private int $id;
 
     #[ORM\Column(type: 'string')]
-    private ?string $title;
+    private ?string $name;
 
     #[ORM\Column(type: 'date')]
-    private ?DateTime $datetime;
+    private \DateTime $datetime;
 
     #[ORM\Column(type: 'string')]
     private string $description;
@@ -29,12 +29,12 @@ class Intership{
         return $this->id;
     }
 
-    public function getTitle(): string
+    public function getName(): string
     {
-        return $this->title;
+        return $this->name;
     }
 
-    public function getDatetime(): DateTime
+    public function getDatetime(): \DateTime
     {
         return $this->datetime;
     }
@@ -45,14 +45,21 @@ class Intership{
     }
 
     // setter
-    public function setTitle(string $title): void
+    public function setName(string $name): void
     {
-        $this->title=$title;
+        $this->name=$name;
     }
 
-    public function setDatetime(DateTime $datetime): void
+    public function setDatetime(?string $value): void
     {
-        $this->datetime=$datetime;
+        $format = 'Y-m-d';
+        $datetime = \DateTime::createFromFormat($format, $value);
+    
+        if ($datetime === false) {
+            throw new \InvalidArgumentException("Invalid datetime format: $value. Expected format: $format");
+        }
+    
+        $this->datetime = $datetime;
     }
 
     public function setDescription(string $description): void

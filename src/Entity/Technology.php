@@ -39,9 +39,9 @@ class Technology{
         return $this->id;
     }
 
-    public function getTitle(): string
+    public function getName(): string
     {
-        return $this->title;
+        return $this->name;
     }
 
     public function getDescription(): string
@@ -49,15 +49,25 @@ class Technology{
         return $this->description;
     }
 
-    // setter
-    public function setTitle(string $title): void
+    public function getImage(): Image
     {
-        $this->title=$title;
+        return $this->image;
+    }
+
+    // setter
+    public function setName(string $name): void
+    {
+        $this->name=$name;
     }
 
     public function setDescription(string $description): void
     {
         $this->description = $description;
+    }
+
+    public function setImage(Image $image): void
+    {
+        $this->image=$image;
     }
 
 }
