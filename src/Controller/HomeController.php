@@ -20,7 +20,7 @@ class HomeController extends AbstractController
         return $this->render('home/index.html.twig',[
 
             'studies'=> $studyRepository->findAll([]),
-            'images'=> $imageRepository->findAll([]),
+            'images'=> $imageRepository->findBy([]),
             'project'=> $projectRepository->findBy([
                 'mainProject' => true,
             ])
