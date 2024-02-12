@@ -43,13 +43,18 @@ class Project{
     // constructeur
     public function __constructer()
     {
-        $this->technologies= new ArrayCollection();
+        $this->technologies = new ArrayCollection();
     }
 
     // getter
     public function getId(): int
     {
         return $this->id;
+    }
+
+    public function getType():TypeProject
+    {
+        return $this->type;
     }
 
     public function getName(): string
@@ -88,12 +93,16 @@ class Project{
         $this->name=$name;
     }
 
-    public function setDatetime(string $value):void
+    public function setDatetime(string $value): void
     {
-        $format = 'Y-m-d';
-        $dateTime = \DateTime::createFromFormat($format, $value);
-
-        $this->datetime=$dateTime;
+        $format = 'Y/m/d';
+        $date = \DateTime::createFromFormat($format, $value);
+    
+        if ($date !== false) {
+            $this->datetime = $date; // Utiliser la propriété correcte $this->datetime
+        } else {
+            throw new \InvalidArgumentException("La valeur '$value' n'est pas une date valide au format '$format'.");
+        }
     }
 
     public function setDescription(string $description): void
@@ -109,6 +118,11 @@ class Project{
     public function setImage(Image $image): void
     {
         $this->image=$image;
+    }
+
+    public function setType(TypeProject $type): void
+    {
+        $this->type = $type;
     }
 
     public function setRole(Role $role): void

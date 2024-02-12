@@ -20,7 +20,7 @@ class TypeProjectFixtures extends Fixture
             "name" => "POC",
         ],
         self::PERSONAL_TYPE_PROJET => [
-            "name" => "Personnelle", // Corrected title for consistency
+            "name" => "Personnelle", 
         ],
     ];
 
@@ -31,7 +31,7 @@ class TypeProjectFixtures extends Fixture
             $type->setName($data['name']);
             $manager->persist($type);
 
-            $this->addReference($reference, $type); // Corrected reference to $type
+            $this->addReference($reference, $type); 
         }
 
         $manager->flush();

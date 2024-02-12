@@ -18,13 +18,14 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
         self::PORTFOLIO_PROJECT => [
             "name" => "portfolio",
             "description" => "Cette plateforme en ligne est un projet visant à présenter les projets que j'ai réalisés.",
-            "date" => "2024/02/06",
+            "date" => "2024/02/24",
             "bestproject" => "true",
-        ],
+        ]
+        ,
         self::CSE_SAINT_VINCENT_PROJECT => [
             "name" => "CSE_SAINT_VINCENT_PROJECT",
             "description" => "Ce projet est une application qui a dû être développée dans le cadre de la validation de ma première année d'étude supérieure.",
-            "date" => "2023/06/06",
+            "date" => "2023/06/13",
             "bestproject" => "false",
         ],
         self::COFFERA_PROJECT => [
@@ -41,7 +42,11 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
             $project = new Project();
             $project->setName($data['name']);
             $project->setDescription($data['description']);
-            $project->setImage(ImageFixtures::IMAGE_LIST['ETERNAL_IMAGE']);
+            $project->setDatetime($data['date']);
+            $project->setRole($this->getReference(RoleFixtures::DEVELOPEUR_ROLE));
+            $project->setMainProject($data['bestproject']);
+            $project->setType($this->getReference(TypeProjectFixtures::SUPERVISER_TYPE_PROJET));
+            $project->setImage($this->getReference(ImageFixtures::ETERNAL_IMAGE));
             $manager->persist($project);
 
             $this->addReference($reference, $project);
@@ -54,6 +59,7 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
     {
         return [
             ImageFixtures::class,
+            RoleFixtures::class,
             TypeProjectFixtures::class
         ];
     }
