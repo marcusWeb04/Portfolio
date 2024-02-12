@@ -32,14 +32,14 @@ class CertificationFixtures extends Fixture implements DependentFixtureInterface
     {
         foreach (self::CERTIFICATION_LIST as $data) {
             $certification = new Certification();
-            $certification->setName($data['name']);
-            $certification->setDescription($data['description']);
-            $certification->setDatetime($data['date']);
-            $certification->setLink($data['link']);
-            $certification->setImage($this->getReference(ImageFixtures::ETERNAL_IMAGE));
+            // $certification->setName($data['name']);
+            // $certification->setDescription($data['description']);
+            // $certification->setDatetime($data['date']);
+            // $certification->setLink($data['link']);
+            // $certification->setImage($this->getReference(ImageFixtures::ETERNAL_IMAGE));
 
-            $manager->persist($certification);
-            $this->addReference($data, $certification);
+            // $manager->persist($certification);
+            // $this->addReference($data, $certification);
         }
     
         $manager->flush();

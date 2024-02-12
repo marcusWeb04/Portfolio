@@ -15,7 +15,7 @@ class LearnMoreFixtures extends Fixture implements DependentFixtureInterface
 
         $learnMore = new LearnMore();
 
-        $learnMore->setDescrition('Je m’appelle Marcus, j’étudie actuellement
+        $learnMore->setDescription('Je m’appelle Marcus, j’étudie actuellement
         au lycée Saint-Vincent situé dans la ville de Senlis, le développement web.
         
         Les projets informatiques m’ont toujours intéressé
@@ -25,6 +25,7 @@ class LearnMoreFixtures extends Fixture implements DependentFixtureInterface
         Ci-dessous, vous trouverez les différents projets sur lesquels j\'ai travaillé, 
         qui témoigneront de mes compétences et des technologies que j\'ai utilisées.');
 
+        $learnMore->setImage($this->getReference(ImageFixtures::ETERNAL_IMAGE));
         
         $manager->persist($learnMore);
 

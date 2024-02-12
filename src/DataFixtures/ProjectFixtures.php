@@ -39,7 +39,7 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
     {
         foreach (self::PROJECT_LIST as $reference => $data) {
             $project = new Project();
-            $project->setTitle($data['name']);
+            $project->setName($data['name']);
             $project->setDescription($data['description']);
             $project->setImage(ImageFixtures::IMAGE_LIST['ETERNAL_IMAGE']);
             $manager->persist($project);

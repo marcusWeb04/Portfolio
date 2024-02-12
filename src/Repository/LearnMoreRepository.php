@@ -2,9 +2,9 @@
 
 namespace App\Repository;
 
-use App\Entity\Role;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use App\Entity\LearnMore;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @extends ServiceEntityRepository<Category>
@@ -16,10 +16,10 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 
 
-class RoleRepository extends ServiceEntityRepository
+class LearnMoreRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Role::class);
+        parent::__construct($registry, Intership::class);
     }
 }

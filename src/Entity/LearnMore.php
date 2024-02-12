@@ -3,6 +3,7 @@ namespace App\Entity;
 
 use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ImageRepository;
 use App\Repository\LearnMoreRepository;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -19,7 +20,6 @@ class LearnMore{
 
     #[ORM\ManyToOne(targetEntity: Image::class, inversedBy: 'learnMores')]
     private Image $image;
-
 
     // getter
     public function getId(): int

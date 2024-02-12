@@ -39,7 +39,6 @@ class ImageFixtures extends Fixture
             $image->setLink($data['link']);
             $manager->persist($image);
             $this->addReference($reference, $image);
-            dd($reference, $image);
         }
 
         $manager->flush();

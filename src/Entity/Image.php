@@ -42,6 +42,7 @@ class Image{
     public function __construct()
     {
         $this->projects = new arrayCollection();
+        $this->learnMores = new arrayCollection();
         $this->technologies = new arrayCollection();
         $this->certifications = new arrayCollection();
     }
