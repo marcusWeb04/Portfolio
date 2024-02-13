@@ -19,7 +19,7 @@ class Subject{
     private ?string $name;
 
     #[ORM\OneToMany(mappedBy: 'subject', targetEntity: MessageSubject::class)]
-    private Collection $subjects;
+    private MessageSubject $Subjects;
 
 
     // constructeur

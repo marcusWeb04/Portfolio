@@ -15,7 +15,7 @@ class MessageSubject{
     #[ORM\Column(type: 'integer')]
     private int $id;
 
-    #[ORM\ManyToONe(targetEntity: Message::Class ,inversedBy: 'messages')]
+    #[ORM\ManyToOne(targetEntity: Message::class, inversedBy: 'messages')]
     private Message $message;
 
     #[ORM\ManyToONe(targetEntity: Subject::Class ,inversedBy: 'subjects')]
@@ -23,16 +23,6 @@ class MessageSubject{
 
     #[ORM\Column(type: 'string')]
     private string $date;
-
-
-    // constructeur
-    public function __constructer()
-    {
-        $this->date = $date;
-        $this->message = $message;
-        $this->subject = $subject;
-        $this->messages = new ArrayCollection();
-    }
 
     // getter
     public function getId(): int

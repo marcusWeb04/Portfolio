@@ -24,15 +24,14 @@ class Message{
     #[ORM\Column(type: 'string')]
     private string $content;
 
-    #[ORM\OneToMany(mappedBy: 'message', targetEntity: MessageSubject::class)]
-    private Collection $messages;
+    #[ORM\OneToMany(mappedBy:'image', targetEntity: Project::class)]
+    private Collection $projects;
 
-
-    // constructeur
-    public function __constructer()
-    {
-        $this->messages = new ArrayCollection();
-    }
+        // constructeur
+        public function __constructer()
+        {
+            $this->projects = new arrayCollection();
+        }
 
     // getter
     public function getId(): int
