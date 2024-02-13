@@ -23,7 +23,7 @@ nav {
   justify-content: space-around;
 }
 
-#experience .content-section .certification.appear .content, #experience .content-section .technology.appear .content, #learn-more .content-section, .part-footer ul, #experience .content-section ul, #learn-more ul, nav ul {
+#contact .content-section .part-section:nth-child(2) form #message, #experience .content-section .certification.appear .content, #experience .content-section .technology.appear .content, #learn-more .content-section, .part-footer ul, #experience .content-section ul, #learn-more ul, nav ul {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -300,6 +300,42 @@ nav a {
 #contact .content-section .part-section:nth-child(1) img {
   width: 65%;
   border-radius: 10px;
+}
+#contact .content-section .part-section:nth-child(2) {
+  border: 1px solid purple;
+}
+#contact .content-section .part-section:nth-child(2) h2 {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  margin-left: 2%;
+}
+#contact .content-section .part-section:nth-child(2) form {
+  border: 1px solid red;
+  width: 100%;
+  height: 60vh;
+}
+#contact .content-section .part-section:nth-child(2) form #message {
+  height: 100%;
+}
+#contact .content-section .part-section:nth-child(2) form #message div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#contact .content-section .part-section:nth-child(2) form #message div:nth-child(1), #contact .content-section .part-section:nth-child(2) form #message div:nth-child(2) {
+  height: 8%;
+}
+#contact .content-section .part-section:nth-child(2) form #message div:nth-child(1) input, #contact .content-section .part-section:nth-child(2) form #message div:nth-child(2) input {
+  width: 40%;
+  height: 100%;
+}
+#contact .content-section .part-section:nth-child(2) form #message div:nth-child(3) {
+  height: 40%;
+}
+#contact .content-section .part-section:nth-child(2) form #message div:nth-child(3) textarea {
+  width: 60%;
+  height: 100%;
 }
 
 footer {
