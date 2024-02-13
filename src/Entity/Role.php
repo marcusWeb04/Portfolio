@@ -18,7 +18,7 @@ class Role{
     #[ORM\Column(type: 'string')]
     private ?string $name;
 
-    #[ORM\ManytoMany(targetEntity: Project::class, mappedBy: 'roles')]
+    #[ORM\ManyToMany(targetEntity: Project::class, mappedBy: 'roles')]
     private Collection $projects;
 
 

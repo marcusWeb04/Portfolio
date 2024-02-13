@@ -7,7 +7,7 @@ use App\Repository\StudyRepository;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
-#[ORM\Entity(repositoryClass: ProjectRepository::class)]
+#[ORM\Entity(repositoryClass: StudyRepository::class)]
 class Study{
     // attribut
     #[ORM\Id]

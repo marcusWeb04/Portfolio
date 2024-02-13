@@ -34,10 +34,10 @@ class Project{
     #[ORM\ManyToOne(targetEntity: TypeProject::class, inversedBy: 'projects')]
     private TypeProject $type;
 
-    #[ORM\ManytoMany(targetEntity: Role::class, inversedBy: 'projects')]
+    #[ORM\ManyToMany(targetEntity: Role::class, inversedBy: 'projects')]
     private Collection $roles;
 
-    #[ORM\ManytoMany(targetEntity: Technology::class, mappedBy: 'projects')]
+    #[ORM\ManyToMany(targetEntity: Technology::class, inversedBy: 'projects')]
     private Collection $technologies;
 
     // constructeur
