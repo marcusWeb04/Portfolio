@@ -62,10 +62,10 @@ class Image{
     {
         return $this->alt;
     }
-
-    public function getLink(): string
+    
+    public function getLink(): ?string
     {
-        $this->link;
+        return $this->link;
     }
 
     // setter

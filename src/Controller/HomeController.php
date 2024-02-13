@@ -15,13 +15,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class HomeController extends AbstractController
 {
     #[Route ("/", name: "home")]
-    public function home(StudyRepository $studyRepository, ProjectRepository $projectRepository, ImageRepository $imageRepository): Response
+    public function home(LearnMoreRepository $learnRepository, ProjectRepository $projectRepository): Response
     {
         return $this->render('home/index.html.twig',[
 
-            'studies'=> $studyRepository->findAll([]),
-            'images'=> $imageRepository->findBy([]),
-            'project'=> $projectRepository->findBy([
+            'learn'=> $learnRepository->findAll(),
+            'projectMain'=> $projectRepository->findBy([
                 'mainProject' => true,
             ])
         ]);

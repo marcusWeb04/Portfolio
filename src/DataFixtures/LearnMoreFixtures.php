@@ -2,7 +2,6 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Image;
 use App\Entity\LearnMore;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;

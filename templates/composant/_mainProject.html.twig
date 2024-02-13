@@ -1,10 +1,11 @@
 {% block mainProject %}
     <div class="main-project">
-        {% for image in images %}
-        
-            {# {% if image.id == project.image %}
-                <img src="{{ image.link }}" >
-            {% endif %} #}
-        {% endfor %}
+        <p>{{project.name}}</p>
+        {% if project.image is defined %}
+                <img 
+                    src="{{asset(project.image.link)}}" 
+                    alt="{{project.image.alt}}"
+                >
+        {% endif %}
     </div>
 {% endblock %}

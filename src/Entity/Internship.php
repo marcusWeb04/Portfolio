@@ -6,7 +6,7 @@ use App\Repository\IntershipRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
-#[ORM\Entity(repositoryClass: ProjectRepository::class)]
+#[ORM\Entity(repositoryClass: IntershipRepository::class)]
 class Intership{
     // attribut
     #[ORM\Id]

@@ -20,6 +20,6 @@ class LearnMoreRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Intership::class);
+        parent::__construct($registry, LearnMore::class);
     }
 }
