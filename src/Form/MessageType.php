@@ -41,10 +41,10 @@ final class MessageType extends AbstractType
                 'expanded' => true,
                 'multiple' => true,
                 'choices' => [
-                    'Emploie' => 'Emploie',
-                    'Stage' => 'Stage',
-                    'Question' => 'Question',
-                    'Projet' => 'Projet',
+                    'Emploie' => '1',
+                    'Stage' => '2',
+                    'Question' => '3',
+                    'Projet' => '4',
                 ],
             ])
 

@@ -288,7 +288,7 @@ nav{
 
 // contact
 #contact{
-    height: 90vh;
+    height: 85vh;
     .content-section{
         height: 90%;
         width: 100%;
@@ -305,20 +305,30 @@ nav{
             }
         }
         .part-section:nth-child(2){
-            border: 1px solid purple;
+            color: white;
             h2{
                 height: 10vh;
-                display: flex;
-                align-items: center;
                 margin-left: 2%;
+                @extend %flex-center;
             }
             form{
-                border: 1px solid red;
                 width: 100%;
                 height: 70.5vh;
                 #message{
                     @extend %flex-wrap-around;
                     height: 100%;
+                    input,textarea,button{
+                        outline: none;
+                        color: $bleu-gris;
+                        border: 2px solid #000;
+                        background-color: $fond-noir;
+                    }
+                    input:focus {
+                        outline: none;
+                    }
+                    ::placeholder{
+                        color:  #F1F1F1;
+                    }
                     div{
                         width: 100%;
                         display: flex;
@@ -327,14 +337,14 @@ nav{
                     div:nth-child(1),div:nth-child(2){
                         height: 8%;
                         input{
-                            width: 40%;
+                            width: 60%;
                             height: 100%;
                         }
                     }
                     div:nth-child(3){
                         height: 40%;
                         textarea{
-                            width: 60%;
+                            width: 70%;
                             height: 100%;
                         }
                     }
@@ -342,20 +352,24 @@ nav{
                         display: flex;
                         flex-direction: column;
                         label{
-                            color: white;
+                            font-size: 1.4vw;
                         }
                         #message_choice{
                             width: 50%;
                             height: 50%;
                             @extend %flex-wrap-around;
+                            label{
+                                font-size: 1.1vw;
+                            }
                             input,label{
                                 width: 25%;
                                 height: 50%;
                             }
-                            input{
-                                border-radius: 0px;
-                            }
                         }
+                    }
+                    button{
+                        padding: 1% 4%;
+                        color: $blanc;
                     }
                 }
             }
@@ -365,7 +379,7 @@ nav{
 
 // footer
 footer{
-    height: 10vh;
+    height: 15vh;
     display: flex;
     .part-footer:nth-child(1){
         display: flex;

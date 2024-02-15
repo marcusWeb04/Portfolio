@@ -1,4 +1,4 @@
-#contact .content-section .part-section:nth-child(1), #learn-more .content-section .part-content, #learn-more, section {
+#contact .content-section .part-section:nth-child(2) h2, #contact .content-section .part-section:nth-child(1), #learn-more .content-section .part-content, #learn-more, section {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -286,7 +286,7 @@ nav a {
 }
 
 #contact {
-  height: 90vh;
+  height: 85vh;
 }
 #contact .content-section {
   height: 90%;
@@ -302,21 +302,33 @@ nav a {
   border-radius: 10px;
 }
 #contact .content-section .part-section:nth-child(2) {
-  border: 1px solid purple;
+  color: white;
 }
 #contact .content-section .part-section:nth-child(2) h2 {
   height: 10vh;
-  display: flex;
-  align-items: center;
   margin-left: 2%;
 }
 #contact .content-section .part-section:nth-child(2) form {
-  border: 1px solid red;
   width: 100%;
   height: 70.5vh;
 }
 #contact .content-section .part-section:nth-child(2) form #message {
   height: 100%;
+}
+#contact .content-section .part-section:nth-child(2) form #message input, #contact .content-section .part-section:nth-child(2) form #message textarea, #contact .content-section .part-section:nth-child(2) form #message button {
+  outline: none;
+  color: #6B7280;
+  border: 2px solid #000;
+  background-color: #1E1E1E;
+}
+#contact .content-section .part-section:nth-child(2) form #message input:focus {
+  outline: none;
+}
+#contact .content-section .part-section:nth-child(2) form #message ::-moz-placeholder {
+  color: #F1F1F1;
+}
+#contact .content-section .part-section:nth-child(2) form #message ::placeholder {
+  color: #F1F1F1;
 }
 #contact .content-section .part-section:nth-child(2) form #message div {
   width: 100%;
@@ -327,14 +339,14 @@ nav a {
   height: 8%;
 }
 #contact .content-section .part-section:nth-child(2) form #message div:nth-child(1) input, #contact .content-section .part-section:nth-child(2) form #message div:nth-child(2) input {
-  width: 40%;
+  width: 60%;
   height: 100%;
 }
 #contact .content-section .part-section:nth-child(2) form #message div:nth-child(3) {
   height: 40%;
 }
 #contact .content-section .part-section:nth-child(2) form #message div:nth-child(3) textarea {
-  width: 60%;
+  width: 70%;
   height: 100%;
 }
 #contact .content-section .part-section:nth-child(2) form #message div:nth-child(4) {
@@ -342,22 +354,26 @@ nav a {
   flex-direction: column;
 }
 #contact .content-section .part-section:nth-child(2) form #message div:nth-child(4) label {
-  color: white;
+  font-size: 1.4vw;
 }
 #contact .content-section .part-section:nth-child(2) form #message div:nth-child(4) #message_choice {
   width: 50%;
   height: 50%;
 }
+#contact .content-section .part-section:nth-child(2) form #message div:nth-child(4) #message_choice label {
+  font-size: 1.1vw;
+}
 #contact .content-section .part-section:nth-child(2) form #message div:nth-child(4) #message_choice input, #contact .content-section .part-section:nth-child(2) form #message div:nth-child(4) #message_choice label {
   width: 25%;
   height: 50%;
 }
-#contact .content-section .part-section:nth-child(2) form #message div:nth-child(4) #message_choice input {
-  border-radius: 0px;
+#contact .content-section .part-section:nth-child(2) form #message button {
+  padding: 1% 4%;
+  color: #FFFFFF;
 }
 
 footer {
-  height: 10vh;
+  height: 15vh;
   display: flex;
 }
 footer .part-footer:nth-child(1) {

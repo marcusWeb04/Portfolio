@@ -39,6 +39,7 @@ class HomeController extends AbstractController
                     'name'=>$message->setName(),
                     'email'=>$message->setEmail(),
                     'content'=>$message->setMessage(),
+                    'choice'=>$message->setSubject(),
                     $manager->persist($message),
                     $manager->flush()
                 ]);
