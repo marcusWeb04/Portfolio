@@ -99,7 +99,7 @@ class Project{
         $date = \DateTime::createFromFormat($format, $value);
     
         if ($date !== false) {
-            $this->datetime = $date; // Utiliser la propriété correcte $this->datetime
+            $this->datetime = $date;
         } else {
             throw new \InvalidArgumentException("La valeur '$value' n'est pas une date valide au format '$format'.");
         }

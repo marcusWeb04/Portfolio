@@ -18,14 +18,14 @@ class Subject{
     #[ORM\Column(type: 'string')]
     private ?string $name;
 
-    #[ORM\OneToMany(mappedBy: 'subject', targetEntity: MessageSubject::class)]
-    private MessageSubject $Subjects;
+    #[ORM\OneToMany(mappedBy: 'subject', targetEntity: Message::class)]
+    private Collection $messages;
 
 
     // constructeur
     public function __constructer()
     {
-        $this->name = $name;
+        $this->messages = new arrayCollection();
     }
 
     // getter
