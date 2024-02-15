@@ -2,7 +2,6 @@
 // src/Form/ContactType.php
 namespace App\Form;
 
-use App\Entity\Message;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -37,6 +36,17 @@ final class MessageType extends AbstractType
                 'required' => true,
             ])
 
+            ->add('choice', ChoiceType::class, [
+                'label' => 'En quoi puis-je vous aider?',
+                'expanded' => true,
+                'multiple' => true,
+                'choices' => [
+                    'Emploie' => 'Emploie',
+                    'Stage' => 'Stage',
+                    'Question' => 'Question',
+                    'Projet' => 'Projet',
+                ],
+            ])
 
             ->add('button', SubmitType::class,[
                 'label' => 'Envoyer'
