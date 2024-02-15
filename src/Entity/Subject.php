@@ -25,7 +25,7 @@ class Subject{
     // constructeur
     public function __constructer()
     {
-        $this->messages = new arrayCollection();
+        $this->messages = new ArrayCollection;
     }
 
     // getter

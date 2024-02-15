@@ -27,7 +27,7 @@ class Message{
     #[ORM\Column(type: 'date')]
     private \Datetime $date;
 
-    #[ORM\ManyToONe(targetEntity: Subject::Class ,inversedBy: 'messages')]
+    #[ORM\ManyToOne(targetEntity: Subject::Class ,inversedBy: 'messages')]
     private Subject $subject;
 
     // getter
