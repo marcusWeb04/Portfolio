@@ -4,9 +4,11 @@
   justify-content: center;
 }
 
-#container-information ul {
+#container-information .content .technologie div:nth-child(2) {
   display: flex;
   align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
 }
 
 nav {
@@ -15,14 +17,14 @@ nav {
   justify-content: space-between;
 }
 
-#contact .content-section .part-section:nth-child(2) form #message div:nth-child(4) #message_choice, #contact .content-section .part-section:nth-child(2) form #message, #learn-more .content-section, .part-footer ul, #container-information ul.actif, #learn-more ul, nav ul {
+#contact .content-section .part-section:nth-child(2) form #message div:nth-child(4) #message_choice, #contact .content-section .part-section:nth-child(2) form #message, #container-information .content .certification .container-certification, #learn-more .content-section, .part-footer ul, #container-information ul, #learn-more ul, nav ul {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
 }
 
-.part-footer ul, #container-information ul.actif, #learn-more ul, nav ul {
+.part-footer ul, #container-information ul, #learn-more ul, nav ul {
   list-style: none;
 }
 
@@ -123,7 +125,7 @@ nav a {
 
 #container-information {
   width: 100%;
-  height: 100vh;
+  border: 1px solid white;
   position: relative;
 }
 #container-information .title-section {
@@ -137,36 +139,77 @@ nav a {
   width: 100%;
   height: 12vh;
   margin-top: 4%;
-  list-style: none;
-  border: 1px solid red;
 }
 #container-information ul li {
   width: 10%;
+  color: #6B7280;
   padding: 3px 18px;
   min-width: -moz-fit-content;
   min-width: fit-content;
-  border-radius: 25px;
-  border: 1px solid #6B7280;
-}
-#container-information ul li:nth-child(1) {
-  margin-left: 4.7%;
-  padding: 3px 18px;
-}
-#container-information ul li:nth-child(1) svg {
-  cursor: pointer;
-}
-#container-information ul li:nth-child(2), #container-information ul li:nth-child(3), #container-information ul li:nth-child(4), #container-information ul li:nth-child(5) {
-  display: none;
-}
-#container-information ul.actif li {
-  margin: 0;
-}
-#container-information ul.actif li:nth-child(2), #container-information ul.actif li:nth-child(3), #container-information ul.actif li:nth-child(4), #container-information ul.actif li:nth-child(5) {
-  display: block !important;
+  text-transform: uppercase;
 }
 #container-information .content {
-  height: 80%;
-  border: 5px solid blue;
+  min-height: 80vh;
+}
+#container-information .content .studies {
+  height: 100%;
+  margin-left: 8%;
+}
+#container-information .content .studies .container-studies {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+}
+#container-information .content .studies .container-studies li {
+  height: 30%;
+  padding: 20px 10px;
+  width: 70%;
+}
+#container-information .content .internship {
+  width: 70%;
+  height: 100%;
+  margin-left: 30%;
+  border: 1px solid white;
+}
+#container-information .content .certification {
+  height: 100%;
+  display: flex;
+}
+#container-information .content .certification .container-certification {
+  width: 82%;
+  height: 100%;
+}
+#container-information .content .certification .container-certification img {
+  width: 4%;
+  height: 7%;
+  background-color: #6B7280;
+  border: 1px solid #E5E7EB;
+}
+#container-information .content .certification div:nth-child(2) {
+  width: 18%;
+}
+#container-information .content .technologie {
+  height: 100%;
+  display: flex;
+}
+#container-information .content .technologie .container-technologie {
+  width: 70%;
+}
+#container-information .content .technologie div:nth-child(2) {
+  width: 30%;
+}
+#container-information .content .technologie div:nth-child(2) img {
+  width: 40%;
+  height: 25%;
+  border: 1px solid white;
+}
+#container-information .content .technologie div:nth-child(2) p {
+  width: 85%;
+  height: 40%;
+  padding: 1% 2%;
+  border: 1px solid white;
 }
 
 #contact {
