@@ -43,72 +43,19 @@
         </li>
     </ul>
 </section>
-{# projet #}
-<section id="project">
+{# container #}
+<div id="container-information">
     <h3 class="title-section">Projet</h3>
-    <div class="content-section">
-        <ul class="container-parameter">
-            <li>
-                <p>trier&nbsp;par</p>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 16L6 10H18L12 16Z"></path>
-                </svg>
-            </li>
-        </ul>
-        <div class="container-main-project">
-            {% for project in projectMain %}
-                {% include 'composant/_mainProject.html.twig' with {'project': project} %}
-            {% endfor %}
-        </div>
+    <ul class="container-option actif">
+        <li>Trier par</li>
+        <li>Intégration</li>
+        <li>Projet personelle</li>
+        <li>Projet encadrées</li>
+        <li>POC</li>
+    </ul>
+    <div class="content">
     </div>
-</section>
-{# Mes études | Stages | Technologie | Certification #}
-{# <section id="experience"> #}
-    {# <h3 class="title-section">Experience</h3>
-    <div class="content-section">
-        <ul>
-            <li>Mes études</li>
-            <li>Stages</li>
-            <li>Technologies</li>
-            <li>Certification</li>
-        </ul>
-        <div class="container">
-            <div class="study appear">
-                <div class="content">
-                {% for study in studies %}
-                    {% include 'composant/_elementList.html.twig' %}
-                {% endfor %}
-            </div>
-            <div class="internship">
-                <div class="content">
-                    {% for internship in internships %}
-                        {% include 'composant/_elementList.html.twig' %}
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="technology">
-                <div class="content">
-                    {% for technology in technologies %}
-                        {% include 'composant/_elementList.html.twig' %}
-                    {% endfor %}
-                </div>
-                <div class="parameter">
-                    <img src="{{asset("img/curriculum-vitae.png")}}">
-                    <p>
-                        description:
-                    </p>
-                </div>
-            </div>
-            <div class="certification">
-                <div class="content">
-                    {% for certification in certifications %}
-                        {% include 'composant/_elementList.html.twig' %}
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </div> #}
-{# </section> #}
+</div>
 {# contact #}
 <section id="contact">
     <h3 class="title-section">Contact</h3>

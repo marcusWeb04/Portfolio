@@ -4,11 +4,9 @@
   justify-content: center;
 }
 
-#experience .content-section .technology.appear .parameter, #experience .content-section .internship.appear .content, #experience .content-section .study.appear .content {
+#container-information ul {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  flex-direction: column;
 }
 
 nav {
@@ -17,20 +15,14 @@ nav {
   justify-content: space-between;
 }
 
-#project .content-section .container-main-project, #project .content-section .container-parameter li {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-#contact .content-section .part-section:nth-child(2) form #message div:nth-child(4) #message_choice, #contact .content-section .part-section:nth-child(2) form #message, #experience .content-section .certification.appear .content, #experience .content-section .technology.appear .content, #learn-more .content-section, .part-footer ul, #experience .content-section ul, #learn-more ul, nav ul {
+#contact .content-section .part-section:nth-child(2) form #message div:nth-child(4) #message_choice, #contact .content-section .part-section:nth-child(2) form #message, #learn-more .content-section, .part-footer ul, #container-information ul.actif, #learn-more ul, nav ul {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
 }
 
-.part-footer ul, #experience .content-section ul, #learn-more ul, nav ul {
+.part-footer ul, #container-information ul.actif, #learn-more ul, nav ul {
   list-style: none;
 }
 
@@ -53,8 +45,8 @@ section .title-section {
   color: #FFFFFF;
   font-size: 1.8vw;
   position: absolute;
-  top: 2%;
-  left: 3%;
+  top: 0.5%;
+  left: 1%;
 }
 section .content-section {
   width: 90vw;
@@ -129,160 +121,52 @@ nav a {
   height: 5%;
 }
 
-#project .content-section {
-  width: 100vw;
-  height: 86vh;
-}
-#project .content-section .container-parameter {
-  height: 20%;
-}
-#project .content-section .container-parameter li {
-  color: #E5E7EB;
-  border: 3px solid #6B7280;
-  border-radius: 25px;
-  width: 17%;
-}
-#project .content-section .container-parameter li p {
-  font-size: 1.2vw;
-}
-#project .content-section .container-parameter li svg {
-  color: #000;
-  width: 15%;
-}
-#project .content-section .container-main-project {
-  height: 80%;
-}
-#project .content-section .container-main-project .main-project {
-  width: 22%;
-  height: 90%;
-  border-radius: 15px;
-  border: 1px solid #6B7280;
-  background-color: #6B7280;
-}
-
-#experience .content-section {
-  margin-top: 5%;
+#container-information {
   width: 100%;
-  height: 90vh;
+  height: 100vh;
+  position: relative;
 }
-#experience .content-section ul {
-  height: 10%;
-  color: #6B7280;
+#container-information .title-section {
+  color: #FFFFFF;
+  font-size: 1.8vw;
+  position: absolute;
+  top: 0.5%;
+  left: 1%;
 }
-#experience .content-section ul li {
-  font-size: 1.65vw;
+#container-information ul {
+  width: 100%;
+  height: 12vh;
+  margin-top: 4%;
+  list-style: none;
+  border: 1px solid red;
+}
+#container-information ul li {
+  width: 10%;
+  padding: 3px 18px;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  border-radius: 25px;
+  border: 1px solid #6B7280;
+}
+#container-information ul li:nth-child(1) {
+  margin-left: 4.7%;
+  padding: 3px 18px;
+}
+#container-information ul li:nth-child(1) svg {
   cursor: pointer;
 }
-#experience .content-section .container {
-  height: 90%;
-}
-#experience .content-section .container .element-content {
-  width: 13%;
-  height: 18%;
-}
-#experience .content-section .study, #experience .content-section .internship, #experience .content-section .technology, #experience .content-section .certification {
+#container-information ul li:nth-child(2), #container-information ul li:nth-child(3), #container-information ul li:nth-child(4), #container-information ul li:nth-child(5) {
   display: none;
-  height: 100%;
 }
-#experience .content-section .study.appear .content {
-  width: 63.5%;
-  height: 100%;
-  border-left: 2px solid #E5E7EB;
-  position: relative;
-  left: 12.5%;
+#container-information ul.actif li {
+  margin: 0;
 }
-#experience .content-section .study.appear .content .content-element {
-  width: 100%;
-  height: 31%;
+#container-information ul.actif li:nth-child(2), #container-information ul.actif li:nth-child(3), #container-information ul.actif li:nth-child(4), #container-information ul.actif li:nth-child(5) {
+  display: block !important;
 }
-#experience .content-section .study.appear .content .content-element h3 {
-  font-size: 1.65vw;
-  position: relative;
-  margin-left: 10px;
-}
-#experience .content-section .study.appear .content .content-element p {
-  width: 68%;
-  height: 70%;
-  margin: 2% 0 0 3%;
-  color: #6B7280;
-}
-#experience .content-section .study.appear .content .content-element h3::after {
-  content: "";
-  height: 16px;
-  width: 16px;
-  background-color: #FFFFFF;
-  position: absolute;
-  top: -1px;
-  left: -19px;
-  border-radius: 50%;
-}
-#experience .content-section .internship.appear .content {
-  width: 63.5%;
-  height: 100%;
-  border-left: 2px solid #E5E7EB;
-  position: relative;
-  left: 36.5%;
-}
-#experience .content-section .internship.appear .content .content-element {
-  width: 100%;
-  height: 31%;
-}
-#experience .content-section .internship.appear .content .content-element h3 {
-  font-size: 1.65vw;
-  position: relative;
-  margin-left: 10px;
-}
-#experience .content-section .internship.appear .content .content-element p {
-  width: 40%;
-  height: 70%;
-  margin: 2% 0 0 3%;
-  color: #6B7280;
-}
-#experience .content-section .internship.appear .content .content-element h3::after {
-  content: "";
-  height: 16px;
-  width: 16px;
-  background-color: #FFFFFF;
-  position: absolute;
-  top: -1px;
-  left: -19px;
-  border-radius: 50%;
-}
-#experience .content-section .technology.appear {
-  display: flex !important;
-}
-#experience .content-section .technology.appear .content {
-  padding: 1% 0;
-  width: 61.5%;
-  height: 100%;
-  gap: 20%;
-  border: 1px solid blueviolet;
-}
-#experience .content-section .technology.appear .content .element-content {
-  width: 13%;
-}
-#experience .content-section .technology.appear .parameter {
-  width: 39.5%;
-  border: 1px solid white;
-}
-#experience .content-section .technology.appear .parameter img {
-  width: 30%;
-}
-#experience .content-section .technology.appear .parameter p {
-  width: 70%;
-  height: 40%;
-  padding: 2px;
-}
-#experience .content-section .certification.appear .content {
-  padding: 1% 0;
-  width: 87.5%;
-  height: 100%;
-  gap: 20%;
-  border-right: 1px solid white;
-}
-#experience .content-section .certification.appear .content .element-content {
-  width: 11%;
-  height: 20.5%;
+#container-information .content {
+  height: 80%;
+  border: 5px solid blue;
 }
 
 #contact {

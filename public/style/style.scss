@@ -20,8 +20,8 @@ section{
         color: $blanc;
         font-size: 1.8vw;
         position: absolute;
-        top: 2%;
-        left: 3%;
+        top: 0.5%;
+        left: 1%;
     }
     .content-section{
         width: 90vw;
@@ -109,180 +109,55 @@ nav{
     }
 }
 
-// projet
-#project{
-    .content-section{
-        width: 100vw;
-        height: 86vh;
-        .container-parameter{
-            // @extend %list;
-            height: 20%;
-            li{
-                color: $blanc-casse;
-                border: 3px solid $bleu-gris;
-                border-radius: 25px;
-                @extend %flex-around;
-                width: 17%;
-                p{
-                    font-size: 1.2vw;
-                }
-                svg{
-                    color: $noir;
-                    width: 15%;
-                }
-            }
-        }
-        .container-main-project{
-            height: 80%;
-            @extend %flex-around;
-            .main-project{
-                width: 22%;
-                height: 90%;
-                border-radius: 15px;
-                border: 1px solid $bleu-gris;
-                background-color: $bleu-gris;
-            }
-        }
+// container information
+#container-information{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    .title-section{
+        color: $blanc;
+        font-size: 1.8vw;
+        position: absolute;
+        top: 0.5%;
+        left: 1%;
     }
-}
-
-// expérience
-#experience{
-    .content-section{
-        margin-top: 5%;
+    ul{
         width: 100%;
-        height: 90vh;
-        ul{
-            height: 10%;
-            color: $bleu-gris;
-            @extend %list;
-            li{
-                font-size: 1.65vw;
+        height: 12vh;
+        margin-top: 4%;
+        list-style: none;
+        border: 1px solid red;
+        @extend %flex-align-center;
+        li{
+            width: 10%;
+            padding: 3px 18px;
+            min-width: fit-content;
+            border-radius: 25px;
+            border: 1px solid $bleu-gris;
+        }
+        li:nth-child(1){
+            margin-left: 4.7%;
+            padding: 3px 18px;
+            svg{
                 cursor: pointer;
             }
         }
-        .container{
-            height: 90%;
-            .element-content{
-                width: 13%;
-                height: 18%;
-            }
+        li:nth-child(2),li:nth-child(3),li:nth-child(4),li:nth-child(5){
+            display: none;   
         }
-        .study,.internship,.technology,.certification{
-            display: none;
-            height: 100%;
+    }
+    ul.actif{
+        @extend %list;
+        li{
+            margin: 0;
         }
-        .study.appear{
-            .content{
-                width: 63.5%;
-                height: 100%;
-                border-left: 2px solid $blanc-casse;
-                @extend %flex-column-around;
-                position: relative;
-                left: 12.5%;
-                .content-element{
-                    width: 100%;
-                    height: 31%;
-                    h3{
-                        font-size: 1.65vw;
-                        position: relative;
-                        margin-left: 10px;
-                    }
-                    p{
-                        width: 68%;
-                        height: 70%;
-                        margin: 2% 0 0 3% ;
-                        color: $bleu-gris;
-                    }
-                }
-                .content-element h3::after{
-                    content: "";
-                    height: 16px;
-                    width: 16px;
-                    background-color: $blanc;
-                    position: absolute;
-                    top: -1px;
-                    left: -19px;
-                    border-radius: 50%;
-                }
-            }
+        li:nth-child(2),li:nth-child(3),li:nth-child(4),li:nth-child(5){
+            display: block!important;   
         }
-        .internship.appear{
-            .content{
-                width: 63.5%;
-                height: 100%;
-                border-left: 2px solid $blanc-casse;
-                @extend %flex-column-around;
-                position: relative;
-                left: 36.5%;
-                .content-element{
-                    width: 100%;
-                    height: 31%;
-                    h3{
-                        font-size: 1.65vw;
-                        position: relative;
-                        margin-left: 10px;
-                    }
-                    p{
-                        width: 40%;
-                        height: 70%;
-                        margin: 2% 0 0 3% ;
-                        color: $bleu-gris;
-                    }
-                }
-                .content-element h3::after{
-                    content: "";
-                    height: 16px;
-                    width: 16px;
-                    background-color: $blanc;
-                    position: absolute;
-                    top: -1px;
-                    left: -19px;
-                    border-radius: 50%;
-                }
-            }
-        }
-        .technology.appear{
-            display: flex!important;
-            .content{
-                padding: 1% 0;
-                width: 61.5%;
-                height: 100%;
-                gap: 20%;
-                @extend %flex-wrap-around;
-                border: 1px solid blueviolet;
-                .element-content{
-                    width: 13%;
-                }
-            }
-            .parameter{
-                width: 39.5%;
-                border: 1px solid white;
-                @extend %flex-column-around;
-                img{
-                    width: 30%;
-                }
-                p{
-                    width: 70%;
-                    height: 40%;
-                    padding: 2px;
-                }
-            }
-        }
-        .certification.appear{
-            .content{
-                padding: 1% 0;
-                width: 87.5%;
-                height: 100%;
-                gap: 20%;
-                @extend %flex-wrap-around;
-                border-right: 1px solid white;
-                .element-content{
-                    width: 11%;
-                    height: 20.5%;
-                }
-            }
-        }
+    }
+    .content{
+        height: 80%;
+        border: 5px solid blue;
     }
 }
 
