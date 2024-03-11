@@ -20,7 +20,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class HomeController extends AbstractController
 {
     #[Route ("/", name: "home")]
-    public function home(LearnMoreRepository $learnRepository, ProjectRepository $projectRepository, Request $request, EntityManagerInterface $entityManager): Response
+    public function home(LearnMoreRepository $learnRepository, StudyRepository $studyRepository, ProjectRepository $projectRepository, Request $request, EntityManagerInterface $entityManager): Response
     {
         $message = new Message();
 
@@ -47,6 +47,7 @@ class HomeController extends AbstractController
         }
         return $this->render('home/index.html.twig', [
             'form' => $form,
+            'studies' => $studyRepository->findAll(),
             'learn'=> $learnRepository->findAll(),
             'projectMain'=> $projectRepository->findBy([
                 'mainProject' => true,

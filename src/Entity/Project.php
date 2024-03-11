@@ -25,7 +25,7 @@ class Project{
     #[ORM\Column(type: 'string')]
     private string $description;
 
-    #[ORM\Column(type: 'string')]
+    #[ORM\Column(type: 'boolean')]
     private bool $mainProject;
 
     #[ORM\ManyToOne(targetEntity: Image::class, inversedBy: 'projects')]
@@ -41,7 +41,7 @@ class Project{
     private Collection $technologies;
 
     // constructeur
-    public function __constructer()
+    public function __construct()
     {
         $this->technologies = new ArrayCollection();
     }

@@ -21,7 +21,7 @@
             <p>{{item.description}}</p>
             </div>
             <div class="part-content">
-            <img src="{{asset(item.image.link)}}" alt="{{item.image.alt}}">
+                <img src="{{asset(item.image.link)}}" alt="{{item.image.alt}}">
             </div>
         {% endfor %}
     </div>
@@ -47,28 +47,13 @@
 <div id="container-information">
     <h3 class="title-section">Experience</h3>
     <ul class="container-option actif">
-        <li>Mes études</li>
-        <li>Stages</li>
-        <li>Technologie</li>
-        <li>Certification</li>
+        <li><a href="">Mes études</a></li>
+        <li><a href="">Stages</a></li>
+        <li><a href="">Technologie</a></li>
+        <li><a href="">Certification</a></li>
     </ul>
     <div class="content">
-        <div class="studies">
-            <div class="container-studies">
-                <li>
-                    <h3>Lycée Marie Cury</h3>
-                    <p>
-                        J'ai obtenue mon bac avec les spécialitées sciences de l'ingénieur et numérique science de l'informatique.
-                    </p>
-                </li>
-                <li>
-                    <h3>Lycée Marie Cury</h3>
-                    <p>
-                        J'ai obtenue mon bac avec les spécialitées sciences de l'ingénieur et numérique science de l'informatique.
-                    </p>
-                </li>
-            </div>
-        </div>
+        {% include './composant/_studies.html.twig' %}
     </div>
 </div>
 {# contact #}
