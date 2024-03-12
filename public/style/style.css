@@ -122,6 +122,9 @@ nav a {
   width: 5%;
   height: 5%;
 }
+#learn-more ul li.actif {
+  color: #FFFFFF;
+}
 
 #container-information {
   width: 100%;
