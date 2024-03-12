@@ -47,13 +47,22 @@
 <div id="container-information">
     <h3 class="title-section">Experience</h3>
     <ul class="container-option actif">
-        <li class="actif"><a href="">Mes études</a></li>
-        <li><a href="">Stages</a></li>
-        <li><a href="">Technologie</a></li>
-        <li><a href="">Certification</a></li>
+        <li class="actif" onclick="appears(study)">Mes études</li>
+        <li onclick="appears(stage)">Stages</li>
+        <li onclick="appears(technologie)">Technologie</li>
+        <li onclick="appears(certification)">Certification</li>
     </ul>
-    <div class="content">
+    <div class="content actif" id="study">
         {% include './composant/_studies.html.twig' %}
+    </div>
+    <div class="content" id="stage">
+        {% include './composant/_stages.html.twig' %}
+    </div>
+        <div class="content" id="technologie">
+        {% include './composant/_technologies.html.twig' %}
+    </div>
+        <div class="content" id="certification">
+        {% include './composant/_certification.html.twig' %}
     </div>
 </div>
 {# contact #}

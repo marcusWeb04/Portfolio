@@ -1,5 +1,12 @@
 controllers:
     resource:
-        path: ../src/Controller/
-        namespace: App\Controller
+        path: ../src/Controller/Client
+        namespace: App\Controller\Client
+    type: attribute
+
+admin_controllers:
+    resource:
+        path: ../src/Controller/BackOffice/
+        namespace: App\Controller\Admin
+    prefix: 'admin'
     type: attribute

@@ -1,53 +1,17 @@
-// stages Ajax
-function stageAjax(){
-    data = new FormData();
-    $.ajax({
-    type: "POST",
-    url: "./templates/composant/_stages.html.twig",
-    data: data,
-    contentType: false,
-    processData: false,
-    success: function(response) {
-       document.querySelector(".content").innerHTML = response;
-    },
-    error: function(xhr, status, error) {
-    alert("Une erreur s'est produite lors de la requÃªte AJAX : " + xhr.responseText);
+// apparition pour les section
+function appears(nom) {
+    var docs = document.querySelectorAll(".content");
+    docs.forEach((doc) => doc.classList.remove("actif"));
+    if(nom == "study"){
+        document.querySelector('#study').classList.add("actif");
     }
-    });  
-}
-
-// technologie Ajax
-function stageAjax(){
-    data = new FormData();
-    $.ajax({
-    type: "POST",
-    url: "./templates/composant/technologie.html.twig",
-    data: data,
-    contentType: false,
-    processData: false,
-    success: function(response) {
-       document.querySelector(".content").innerHTML = response;
-    },
-    error: function(xhr, status, error) {
-    alert("Une erreur s'est produite lors de la requÃªte AJAX : " + xhr.responseText);
+    else if(nom == "stage"){
+        document.querySelector('#stage').classList.add("actif");
     }
-    });  
-}
-
-// certification Ajax
-function stageAjax(){
-    data = new FormData();
-    $.ajax({
-    type: "POST",
-    url: "./templates/composant/certification.html.twig",
-    data: data,
-    contentType: false,
-    processData: false,
-    success: function(response) {
-       document.querySelector(".content").innerHTML = response;
-    },
-    error: function(xhr, status, error) {
-    alert("Une erreur s'est produite lors de la requÃªte AJAX : " + xhr.responseText);
+    else if(nom = "technologie"){
+        document.querySelector('#technologie').classList.add("actif");   
     }
-    });  
+    else if(nom = "certification"){
+        document.querySelector('#certification').classList.add("actif");   
+    }
 }

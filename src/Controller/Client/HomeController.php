@@ -1,6 +1,6 @@
 <?php 
 
-namespace App\Controller;
+namespace App\Controller\Client;
 
 use App\Entity\Message;
 use App\Form\MessageType;
@@ -52,6 +52,7 @@ class HomeController extends AbstractController
             'projectMain'=> $projectRepository->findBy([
                 'mainProject' => true,
             ]),
+
         ]);
     }
 }
