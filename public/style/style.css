@@ -17,6 +17,12 @@ nav {
   justify-content: space-between;
 }
 
+#container-information .content .technologie .container-technologie {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
 #contact .content-section .part-section:nth-child(2) form #message div:nth-child(4) #message_choice, #contact .content-section .part-section:nth-child(2) form #message, #container-information .content .certification .container-certification, #learn-more .content-section, .part-footer ul, #container-information .container-option, #learn-more ul, nav ul {
   display: flex;
   flex-wrap: wrap;
@@ -126,9 +132,56 @@ nav a {
   color: #FFFFFF;
 }
 
-#container-information {
+#container-projet {
+  display: block;
+}
+#container-projet ul {
+  height: 20vh;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#container-projet ul li {
+  cursor: pointer;
+  border-radius: 15px;
+  border: 1.5px solid #6B7280;
+  width: 15%;
+  padding: 0.4% 0.2%;
+}
+#container-projet ul li:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+}
+#container-projet ul li:nth-child(1) svg {
+  width: 10%;
+}
+#container-projet ul li:nth-child(1) svg path {
+  color: #000;
+}
+#container-projet .container-project {
+  height: 80vh;
+}
+#container-projet .container-project .part-projet {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#container-projet .container-project #main-projet .projet {
+  width: 25%;
+  height: 75%;
+  border-radius: 3%;
+  background-color: #6B7280;
+}
+#container-projet .container-project #main-projet .projet img {
   width: 100%;
-  position: relative;
+  height: 100%;
+  border-radius: 3%;
+}
+
+#container-information {
+  display: block;
 }
 #container-information .title-section {
   color: #FFFFFF;
@@ -208,10 +261,15 @@ nav a {
   display: flex;
 }
 #container-information .content .technologie .container-technologie {
-  width: 70%;
+  width: 60%;
+  height: 100%;
+}
+#container-information .content .technologie .container-technologie img {
+  width: 20%;
 }
 #container-information .content .technologie div:nth-child(2) {
   width: 30%;
+  border-left: 1px solid #E5E7EB;
 }
 #container-information .content .technologie div:nth-child(2) img {
   width: 40%;

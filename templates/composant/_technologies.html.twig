@@ -1,6 +1,8 @@
 <div class="technologie">
     <div class="container-technologie">
-    {% for  %}
+    {% for technology in  technologies %}
+        <img src="{{asset(technology.image.link)}}" alt="{{technology.image.alt}}">
+    {% endfor %}
     </div>
     <div>
         <img src="#" alt="#">

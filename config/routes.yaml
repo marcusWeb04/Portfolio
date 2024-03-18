@@ -1,7 +1,7 @@
 controllers:
     resource:
-        path: ../src/Controller/Client
-        namespace: App\Controller\Client
+        path: ../src/Controller/Public
+        namespace: App\Controller\Public
     type: attribute
 
 admin_controllers:

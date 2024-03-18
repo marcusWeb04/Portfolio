@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\Entity\TechnologyRepository;
+use App\Entity\Technology;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -16,7 +16,7 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 
 
-class CertificationRepository extends ServiceEntityRepository
+class TechnologyRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {

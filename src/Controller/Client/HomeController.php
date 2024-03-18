@@ -1,12 +1,13 @@
 <?php 
 
-namespace App\Controller\Client;
+namespace App\Controller\Public;
 
 use App\Entity\Message;
 use App\Form\MessageType;
 use App\Repository\ImageRepository;
 use App\Repository\StudyRepository;
 use App\Repository\ProjectRepository;
+use App\Repository\TechnologyRepository;
 use App\Repository\LearnMoreRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
@@ -20,7 +21,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class HomeController extends AbstractController
 {
     #[Route ("/", name: "home")]
-    public function home(LearnMoreRepository $learnRepository, StudyRepository $studyRepository, ProjectRepository $projectRepository, Request $request, EntityManagerInterface $entityManager): Response
+    public function home(TechnologyRepository $technologyRepository,LearnMoreRepository $learnRepository, StudyRepository $studyRepository, ProjectRepository $projectRepository, Request $request, EntityManagerInterface $entityManager): Response
     {
         $message = new Message();
 
@@ -47,6 +48,7 @@ class HomeController extends AbstractController
         }
         return $this->render('home/index.html.twig', [
             'form' => $form,
+            'technologies'=>$technologyRepository->findAll(),
             'studies' => $studyRepository->findAll(),
             'learn'=> $learnRepository->findAll(),
             'projectMain'=> $projectRepository->findBy([

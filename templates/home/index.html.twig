@@ -43,28 +43,53 @@
         </li>
     </ul>
 </section>
+{# projet #}
+<section id="container-projet">
+    <h3 class="title-section">Projet<h3>
+    <ul>
+        <li>
+            Trier par 
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+        </li>
+        <li>Intégration</li>
+        <li>Projet personelle</li>
+        <li>Projet encadrées</li>
+        <li>POC</li>
+    </ul>
+    <div class="container-project">
+        <div id="main-projet" class="part-projet">
+            {% for projet in projectMain %}
+                <div class="projet">
+                    <img src="{{projet.image.link}}" alt="projet.image.alt">
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 {# container #}
-<div id="container-information">
+<section id="container-information">
     <h3 class="title-section">Experience</h3>
     <ul class="container-option actif">
-        <li class="actif" onclick="appears(study)">Mes études</li>
-        <li onclick="appears(stage)">Stages</li>
-        <li onclick="appears(technologie)">Technologie</li>
-        <li onclick="appears(certification)">Certification</li>
+        <li class="actif" onclick="appears('study')">Mes études</li>
+        <li onclick="appears('stage')">Stages</li>
+        <li onclick="appears('technologie')">Technologie</li>
+        <li onclick="appears('certification')">Certification</li>
     </ul>
-    <div class="content actif" id="study">
+    <div class="content" id="study">
         {% include './composant/_studies.html.twig' %}
     </div>
     <div class="content" id="stage">
         {% include './composant/_stages.html.twig' %}
     </div>
-        <div class="content" id="technologie">
+        <div class="content actif" id="technologie">
         {% include './composant/_technologies.html.twig' %}
     </div>
-        <div class="content" id="certification">
+    <div class="content" id="certification">
         {% include './composant/_certification.html.twig' %}
     </div>
-</div>
+</section>
 {# contact #}
 <section id="contact">
     <h3 class="title-section">Contact</h3>

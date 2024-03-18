@@ -112,11 +112,60 @@ nav{
     }
 }
 
+// section projet
+#container-projet{
+    display: block;
+    ul{
+        height: 20vh;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        li{
+            cursor: pointer;
+            border-radius: 15px;
+            border: 1.5px solid $bleu-gris;
+            width: 15%;
+            padding:  0.4% 0.2%;
+        }
+        li:nth-child(1){
+            display: flex;
+            justify-content: space-between;
+            svg{
+                width: 10%;
+            }
+            svg path{
+                color: #000;
+            }
+        }
+    }
+    .container-project{
+        height: 80vh;
+        .part-projet{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        #main-projet{
+            .projet{
+                width: 25%;
+                height: 75%;
+                border-radius: 3%;
+                background-color: $bleu-gris;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 3%;
+                }
+            }
+        }
+    }
+}
+
 // container information
 #container-information{
-    width: 100%;
-    // min-height: 100vh;
-    position: relative;
+    display: block;
     .title-section{
         color: $blanc;
         font-size: 1.8vw;
@@ -194,10 +243,16 @@ nav{
             height: 100%;
             display: flex;
             .container-technologie{
-                width: 70%;
+                width: 60%;
+                height: 100%;
+                @extend %flex-around;
+                img{
+                    width: 20%;
+                }
             }
             div:nth-child(2){
                 width: 30%;
+                border-left: 1px solid $blanc-casse; 
                 @extend %flex-column-around;
                 img{
                     width: 40%;
