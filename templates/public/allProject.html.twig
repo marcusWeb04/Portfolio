@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{asset("style/allProject.css")}}">
+{% endblock %}
+
+{% block body %}
+    <nav>
+        <h2>MF</h2>
+        <ul>
+            <img src="{{asset("img/menu-nav.png")}}">
+            <li><a href="{{path("home")}}">Accueil</a></li>
+        </ul>
+    </nav>
+    <div class="allProject">
+        <div class="container-project">
+            {% for project in projects %}
+                {% include 'composant/_project.html.twig' with {project} only %}
+            {% endfor %}
+        </div>
+        <div class="container-pagination">
+            <ul>
+                {% if currentPage == 1 %}
+                    <li class="container-number">
+                        {% for i in range(currentPage,3) %}
+                            {% if  i  == 1 %}
+                                {% include 'composant/_containerNumberPage.html.twig' with {'class': 'numberPage actif', 'number': i } %}
+                            {% else %}
+                                {% include 'composant/_containerNumberPage.html.twig' with {'class' :'numberPage', 'number': i } %}
+                            {% endif %}
+                        {% endfor %}
+                    </li>
+                    <li class="bouton-pagination">
+                        <a href="{{path('projectPages',{id: currentPage + 1})}}">Suivant</a>
+                    </li>
+                {% elseif currentPage < countPages %}
+                    <li class="bouton-pagination">
+                        <a href="{{path('projectPages',{id: currentPage - 1})}}">Précédent</a>
+                    </li>
+                    <li class="container-number">
+                        {% include 'composant/_containerNumberPage.html.twig' with {'class' :'numberPage', 'number': currentPage - 1 } %}
+                        {% include 'composant/_containerNumberPage.html.twig' with {'class': 'numberPage actif', 'number': currentPage }  %}
+                        {% include 'composant/_containerNumberPage.html.twig' with {'class' :'numberPage', 'number': currentPage + 1  } %}
+                    </li>
+                    <li class="bouton-pagination">
+                        <a href="{{path('projectPages',{id: currentPage + 1})}}">Suivant</a>
+                    </li>
+                {% else %}
+                    <li class="bouton-pagination">
+                        <a href="{{path('projectPages',{id: currentPage - 1})}}">Précédent</a>
+                    </li>
+                    <li class="container-number">
+                        {% include 'composant/_containerNumberPage.html.twig' with {'class' :'numberPage', 'number': currentPage - 2 } %}
+                        {% include 'composant/_containerNumberPage.html.twig' with {'class': 'numberPage', 'number': currentPage - 1 }  %}
+                        {% include 'composant/_containerNumberPage.html.twig' with {'class' :'numberPage actif', 'number': currentPage }  %}
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

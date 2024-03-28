@@ -46,7 +46,7 @@ class HomeController extends AbstractController
                 ]);
             }
         }
-        return $this->render('home/index.html.twig', [
+        return $this->render('public/index.html.twig', [
             'form' => $form,
             'technologies'=>$technologyRepository->findAll(),
             'studies' => $studyRepository->findAll(),
@@ -55,6 +55,51 @@ class HomeController extends AbstractController
                 'mainProject' => true,
             ]),
 
+        ]);
+    }
+
+    #[Route ("/projects", name: "projects")]
+    public function projects(Request $request, ProjectRepository $projectRepository): Response
+    {
+        $countProject = $projectRepository->count([]);
+        $countPerPage = 6;
+        $currentPage = $request->query->getInt('page', 1);
+        $countPages = ceil($countProject / $countPerPage);
+
+        // On vérifie que la page renseignée dans l'url est valide, si ce n'est pas le cas on génère une 404.
+        if ($currentPage > $countPages || $currentPage <= 0) {
+            throw $this->createNotFoundException();
+        }
+
+        $projects = $projectRepository->paginate($currentPage, $countPerPage);
+
+        return $this->render('public/allProject.html.twig', [
+            'projects' => $projects,
+            'countPages' => $countPages,
+            'currentPage' => $currentPage,
+        ]); 
+    }
+
+    #[Route ("/projects/{id}", name: 'projectPages', methods: 'GET')]
+    public function projectPages(ProjectRepository $projectRepository, int $id): Response
+    {
+        $countProject = $projectRepository->count([]);
+        $countPerPage = 6;
+
+        $currentPage = $id;
+        $countPages = ceil($countProducts / $countPerPage);
+
+        // On vérifie que la page renseignée dans l'url est valide, si ce n'est pas le cas on génère une 404.
+        if ($currentPage > $countPages || $currentPage <= 0) {
+            throw $this->createNotFoundException();
+        }
+
+        $products = $productRepository->paginate($currentPage, $countPerPage);
+
+        return $this->render('product/index.html.twig', [
+            'products' => $products,
+            'countPages' => $countPages,
+            'currentPage' => $currentPage,
         ]);
     }
 }

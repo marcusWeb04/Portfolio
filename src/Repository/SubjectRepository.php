@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\Entity\Project;
+use App\Entity\Subject;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -16,19 +16,10 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 
 
-class ProjectRepository extends ServiceEntityRepository
+class SubjectRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Project::class);
-    }
-
-    public function paginate(int $page, int $itemsPerPage): array
-    {
-        return $this->createQueryBuilder('p')
-            ->setFirstResult(($page -1) * $itemsPerPage)
-            ->setMaxResults($itemsPerPage)
-            ->getQuery()
-            ->execute();
+        parent::__construct($registry, Subject::class);
     }
 }

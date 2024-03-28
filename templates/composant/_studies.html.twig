@@ -1,12 +1,6 @@
-<div class="studies">
-    <div class="container-studies">
-        {% for study in studies %}
-            <li>
-                <h3>{{study.name}}</h3>
-                <p>
-                    {{study.description}}
-                </p>
-            </li>
-        {% endfor %}
+{% block studies %}
+    <div class="card-studies">
+        <h3>{{study.name}}</h3>
+        <p>{{study.description}}</p>
     </div>
-</div>
+{% endblock %}

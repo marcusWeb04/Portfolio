@@ -1,6 +1,5 @@
-<div class="certification">
-        <div class="container-certification">
-            {# <img src="#" alt="#"> #}
-        </div>
-        <div></div>
-</div>
+{% block certification %}
+    <div class="card-certification">
+        <img src="{{asset(certification.image.link)}}" alt="{{certification.image.alt}}">
+    </div>
+{% endblock %}

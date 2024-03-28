@@ -1,409 +1,254 @@
-#contact .content-section .part-section:nth-child(2) h2, #contact .content-section .part-section:nth-child(1), #learn-more .content-section .part-content, #learn-more, section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#container-information .content .technologie div:nth-child(2) {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: column;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-#container-information .content .technologie .container-technologie {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-#contact .content-section .part-section:nth-child(2) form #message div:nth-child(4) #message_choice, #contact .content-section .part-section:nth-child(2) form #message, #container-information .content .certification .container-certification, #learn-more .content-section, .part-footer ul, #container-information .container-option, #learn-more ul, nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.part-footer ul, #container-information .container-option, #learn-more ul, nav ul {
-  list-style: none;
-}
-
 *, ::before, ::after {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
 body {
+  font-family: "inter";
   background-color: #1E1E1E;
 }
 
 section {
-  height: 100vh;
-  position: relative;
+  min-height: 100vh;
+  border: 1px solid white;
 }
-section .title-section {
-  color: #FFFFFF;
-  font-size: 1.8vw;
-  position: absolute;
-  top: 0.5%;
-  left: 1%;
+section h3 {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  margin-left: 2%;
 }
 section .content-section {
-  width: 90vw;
-  height: 80vh;
-}
-
-a {
-  text-decoration: none;
-}
-
-h1, h3, p {
-  color: #FFFFFF;
-}
-
-.appear {
-  display: block !important;
+  height: 90vh;
 }
 
 nav {
   height: 10vh;
-  padding: 1%;
-  color: #E5E7EB;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3%;
+  text-transform: uppercase;
 }
 nav ul {
-  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+  align-items: center;
 }
-nav a {
-  color: #E5E7EB;
+nav ul img {
+  width: 13%;
+}
+
+ul {
+  list-style: none;
+}
+
+p, h1, h2, h3, h4, h5, a, nav, ul {
+  color: white;
+}
+
+.text-yellow {
+  color: #D9A404;
+}
+
+.visibility-1 {
+  opacity: 1 !important;
+}
+
+.main-project {
+  width: 23%;
+  height: 85%;
+}
+.main-project img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
 }
 
 #home {
-  padding-top: 5%;
-  height: 90vh !important;
-  display: block;
+  height: 90vh;
 }
-#home h1 {
-  font-size: 3vw;
-  margin-left: 2%;
+#home p {
+  margin: 13% 0 8% 4%;
+  font-size: 3rem;
 }
-#home h2 {
-  margin-top: 10%;
-  font-size: 2.5vw;
-  color: #6B7280;
-  text-align: center;
+#home ul {
+  height: 30%;
+  width: 30%;
+  margin-left: auto;
+  display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#home ul li {
+  width: 13%;
+  height: 28%;
 }
 
-#learn-more {
-  color: #FFFFFF;
+#about .content-section {
+  display: flex;
 }
-#learn-more .content-section .part-content {
-  width: 45%;
-  height: 95%;
-}
-#learn-more .content-section .part-content:nth-child(1) p {
-  text-align: justify;
-  word-wrap: break-word;
-  white-space: pre-line;
-}
-#learn-more .content-section .part-content:nth-child(2) {
-  width: 25%;
-  height: 50%;
-}
-#learn-more .content-section .part-content:nth-child(2) img {
-  border-radius: 25px;
-  width: 90%;
-}
-#learn-more ul {
+#about .content-section .part-section-about {
+  border: 1px solid orange;
   width: 50%;
 }
-#learn-more ul li {
-  width: 5%;
-  height: 5%;
-}
-#learn-more ul li.actif {
-  color: #FFFFFF;
-}
-
-#container-projet {
-  display: block;
-}
-#container-projet ul {
-  height: 20vh;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-#container-projet ul li {
-  cursor: pointer;
-  border-radius: 15px;
-  border: 1.5px solid #6B7280;
-  width: 15%;
-  padding: 0.4% 0.2%;
-}
-#container-projet ul li:nth-child(1) {
-  display: flex;
-  justify-content: space-between;
-}
-#container-projet ul li:nth-child(1) svg {
-  width: 10%;
-}
-#container-projet ul li:nth-child(1) svg path {
-  color: #000;
-}
-#container-projet .container-project {
-  height: 80vh;
-}
-#container-projet .container-project .part-projet {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-#container-projet .container-project #main-projet .projet {
-  width: 25%;
-  height: 75%;
-  border-radius: 3%;
-  background-color: #6B7280;
-}
-#container-projet .container-project #main-projet .projet img {
-  width: 100%;
-  height: 100%;
-  border-radius: 3%;
-}
-
-#container-information {
-  display: block;
-}
-#container-information .title-section {
-  color: #FFFFFF;
-  font-size: 1.8vw;
-  position: absolute;
-  top: 0.5%;
-  left: 1%;
-}
-#container-information .container-option {
-  width: 100%;
-  height: 12vh;
-  margin-top: 4%;
-}
-#container-information .container-option li {
-  width: 10%;
-  padding: 3px 18px;
-  cursor: pointer;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
-  text-transform: uppercase;
-}
-#container-information .container-option li a {
-  color: #6B7280;
-}
-#container-information .container-option li.actif {
-  color: #E5E7EB;
-}
-#container-information .content {
-  display: none;
-  min-height: 80vh;
-}
-#container-information .content .studies {
-  height: 100%;
-  margin-left: 8%;
-}
-#container-information .content .studies .container-studies {
-  width: 60%;
-  height: 100%;
+#about .content-section .part-section-about:nth-child(1) {
   display: flex;
   flex-direction: column;
-  gap: 5%;
+  justify-content: space-between;
 }
-#container-information .content .studies .container-studies li {
-  list-style: none;
+#about .content-section .part-section-about:nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#about .content-section .part-section-about:nth-child(2) img {
+  border-radius: 15px;
+  width: 50%;
+}
+
+.content-project-option {
+  height: 17%;
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.content-project-option li {
+  width: 15%;
   height: 30%;
-  padding: 20px 10px;
-  width: 70%;
-}
-#container-information .content .studies .container-studies li p {
-  color: #6B7280;
-}
-#container-information .content .internship {
-  width: 70%;
-  height: 100%;
-  margin-left: 30%;
-  border: 1px solid white;
-}
-#container-information .content .certification {
-  height: 100%;
+  margin: 0 8%;
+  padding: 0 1%;
+  opacity: 0;
+  border-radius: 15px;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #6B7280;
 }
-#container-information .content .certification .container-certification {
-  width: 82%;
-  height: 100%;
+.content-project-option li:nth-child(1) {
+  opacity: 1 !important;
 }
-#container-information .content .certification .container-certification img {
-  width: 4%;
-  height: 7%;
-  background-color: #6B7280;
-  border: 1px solid #E5E7EB;
-}
-#container-information .content .certification div:nth-child(2) {
-  width: 18%;
-}
-#container-information .content .technologie {
-  height: 100%;
+
+.content-project {
+  height: 83%;
+  width: 100%;
+  border: 1px solid blue;
   display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
-#container-information .content .technologie .container-technologie {
-  width: 60%;
-  height: 100%;
-}
-#container-information .content .technologie .container-technologie img {
-  width: 20%;
-}
-#container-information .content .technologie div:nth-child(2) {
-  width: 30%;
-  border-left: 1px solid #E5E7EB;
-}
-#container-information .content .technologie div:nth-child(2) img {
-  width: 40%;
-  height: 25%;
-  border: 1px solid white;
-}
-#container-information .content .technologie div:nth-child(2) p {
-  width: 85%;
-  height: 40%;
-  padding: 1% 2%;
-  border: 1px solid white;
-}
-#container-information .content.actif {
-  display: block !important;
+
+.content-experience-option {
+  border: 1px solid red;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 #contact {
-  height: 85vh;
-}
-#contact .content-section {
-  height: 90%;
-  width: 100%;
-  height: 89.5%;
+  height: 90vh;
   display: flex;
+  border: 1px solid red;
 }
-#contact .content-section .part-section {
+#contact .part-contact {
   width: 50%;
-}
-#contact .content-section .part-section:nth-child(1) img {
-  width: 65%;
-  border-radius: 10px;
-}
-#contact .content-section .part-section:nth-child(2) {
-  color: white;
-}
-#contact .content-section .part-section:nth-child(2) h2 {
-  height: 10vh;
-  margin-left: 2%;
-}
-#contact .content-section .part-section:nth-child(2) form {
-  width: 100%;
-  height: 70.5vh;
-}
-#contact .content-section .part-section:nth-child(2) form #message {
   height: 100%;
+  border: 1px solid blue;
 }
-#contact .content-section .part-section:nth-child(2) form #message input, #contact .content-section .part-section:nth-child(2) form #message textarea, #contact .content-section .part-section:nth-child(2) form #message button {
-  outline: none;
-  color: #6B7280;
-  border: 2px solid #000;
-  background-color: #1E1E1E;
+#contact .part-contact img {
+  width: 49%;
+  height: 70%;
+  border-radius: 10px;
+  border: 1px solid red;
 }
-#contact .content-section .part-section:nth-child(2) form #message input:focus {
-  outline: none;
-}
-#contact .content-section .part-section:nth-child(2) form #message ::-moz-placeholder {
-  color: #F1F1F1;
-}
-#contact .content-section .part-section:nth-child(2) form #message ::placeholder {
-  color: #F1F1F1;
-}
-#contact .content-section .part-section:nth-child(2) form #message div {
-  width: 100%;
+#contact .part-contact:nth-child(1) {
   display: flex;
+  align-items: center;
   justify-content: center;
 }
-#contact .content-section .part-section:nth-child(2) form #message div:nth-child(1), #contact .content-section .part-section:nth-child(2) form #message div:nth-child(2) {
-  height: 8%;
-}
-#contact .content-section .part-section:nth-child(2) form #message div:nth-child(1) input, #contact .content-section .part-section:nth-child(2) form #message div:nth-child(2) input {
-  width: 60%;
+#contact .part-contact:nth-child(2) form {
   height: 100%;
+  border: 5px solid white;
 }
-#contact .content-section .part-section:nth-child(2) form #message div:nth-child(3) {
-  height: 40%;
-}
-#contact .content-section .part-section:nth-child(2) form #message div:nth-child(3) textarea {
-  width: 70%;
+#contact .part-contact:nth-child(2) form #message {
   height: 100%;
-}
-#contact .content-section .part-section:nth-child(2) form #message div:nth-child(4) {
   display: flex;
+  align-items: center;
+  justify-content: space-around;
   flex-direction: column;
 }
-#contact .content-section .part-section:nth-child(2) form #message div:nth-child(4) label {
-  font-size: 1.4vw;
+#contact .part-contact:nth-child(2) form #message input, #contact .part-contact:nth-child(2) form #message textarea {
+  border: 1px solid #000;
+  background-color: #1E1E1E;
 }
-#contact .content-section .part-section:nth-child(2) form #message div:nth-child(4) #message_choice {
+#contact .part-contact:nth-child(2) form #message div:nth-child(1), #contact .part-contact:nth-child(2) form #message div:nth-child(2) {
   width: 50%;
-  height: 50%;
+  height: 8%;
 }
-#contact .content-section .part-section:nth-child(2) form #message div:nth-child(4) #message_choice label {
-  font-size: 1.1vw;
+#contact .part-contact:nth-child(2) form #message input {
+  height: 100%;
+  width: 100%;
 }
-#contact .content-section .part-section:nth-child(2) form #message div:nth-child(4) #message_choice input, #contact .content-section .part-section:nth-child(2) form #message div:nth-child(4) #message_choice label {
-  width: 25%;
-  height: 50%;
+#contact .part-contact:nth-child(2) form #message div:nth-child(3) {
+  height: 30%;
+  width: 55%;
 }
-#contact .content-section .part-section:nth-child(2) form #message button {
-  padding: 1% 4%;
-  color: #FFFFFF;
+#contact .part-contact:nth-child(2) form #message div:nth-child(3) textarea {
+  width: 100%;
+  height: 100%;
+}
+#contact .part-contact:nth-child(2) form #message div:nth-child(4) {
+  width: 55%;
+  height: 20%;
+}
+#contact .part-contact:nth-child(2) form #message div:nth-child(4) #message_choice {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#contact .part-contact:nth-child(2) form #message div:nth-child(4) #message_choice input {
+  width: 5%;
+  border: 0px;
+}
+#contact .part-contact:nth-child(2) form #message button {
+  padding: 3px 20px;
 }
 
 footer {
-  height: 15vh;
+  height: 10vh;
   display: flex;
-}
-footer .part-footer:nth-child(1) {
-  display: flex;
+  align-items: center;
   justify-content: space-between;
 }
-footer .part-footer:nth-child(1) ul {
-  font-size: 1.4vw;
-}
-footer .part-footer:nth-child(2) ul {
-  width: 60%;
-  display: flex;
-  margin-left: auto;
-}
-footer .part-footer:nth-child(2) ul li {
-  width: 10%;
-}
-footer .part-footer:nth-child(2) ul li svg {
-  width: 100%;
-}
-footer .part-footer:nth-child(2) a {
-  margin-left: 55%;
-  font-size: 1.3vw;
-  color: #FFFFFF;
-}
-
-.part-footer {
+footer div {
   width: 50%;
-  color: white;
+  height: 100%;
   display: flex;
+  justify-content: space-around;
   flex-direction: column;
+}
+footer div:nth-child(1) h2 {
+  margin-left: 7%;
+}
+footer div:nth-child(1) ul {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+footer div:nth-child(1) ul li {
+  font-size: 1.2rem;
+}
+footer div:nth-child(2) a {
+  margin-left: auto;
+  margin-right: 2%;
+  font-size: 1.1rem;
 }/*# sourceMappingURL=style.css.map */

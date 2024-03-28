@@ -1,6 +1,5 @@
 {% block mainProject %}
     <div class="main-project">
-        <p>{{project.name}}</p>
         {% if project.image is defined %}
                 <img 
                     src="{{asset(project.image.link)}}" 

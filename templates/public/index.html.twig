@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <nav>
+        <h2>MF</h2>
+        <ul>
+            <img src="{{asset("img/menu-nav.png")}}">
+            <li><p>Accueil</p></li>
+            <li><p>Projet</p></li>
+            <li><p>Contact</p></li>
+        </ul>
+    </nav>
+    <div id="home">
+        <p>
+            Bonjour,</br>
+            Je suis  <span class="text-yellow">Marcus Favernay</span></br>
+            Je suis un <span class="text-yellow">développeur full stack</span>
+        </p>
+        <ul>
+            <li>a</li>
+            <li>a</li>
+        </ul>
+    </div>
+    <section id="about">
+        <h3>A propos de moi</h3>
+        <div class="content-section">
+            <div class="part-section-about">
+            </div>
+            <div class="part-section-about">
+                <img src="{{asset("img/eternal.webp")}}">
+            </div>
+        </div>
+    </section>
+    <section id="project">
+        <h3>Projet</h3>
+        <div class="content-section">
+            <ul class="content-project-option">
+                <li>Trier par</li>
+                <li>Intégration</li>
+                <li>Projet Personnel</li>
+                <li>Projet Encadrées</li>
+                <li>POC</li>
+                <li>Voir tous les projets</li>
+            </ul>
+            <div class="content-project">
+                {% for project in projectMain %}
+                    {% include 'composant/_mainProject.html.twig'%}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section id="experience">
+        <h3>Expérience</h3>
+        <div class="content-section">
+            <ul class="content-experience-option">
+                <li>Mes études</li>
+                <li>Mes expérience professionel</li>
+                <li>Technologies</li>
+                <li>Certifications</li>
+            </ul>
+            <div class="content-experience">
+                
+            </div>
+        </div>
+    </section>
+    <div id="contact">
+        <div class="part-contact">
+            <img src="#" alt="#">
+        </div>
+        <div class="part-contact">
+            {{ form(form) }}
+        </div>
+    </div>
+{% endblock %}
