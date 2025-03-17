@@ -1,0 +1,20 @@
+@import "../main";
+@import "../variable";
+
+nav{
+    height: 5vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid red;
+    ul{
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    #main-logo-portfolio{
+        margin-right: 5%;
+    }
+}
